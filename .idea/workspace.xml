@@ -5,13 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ce2d53f-01c8-45b0-b178-19b0a7bd59b2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Jogador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/ListaJogadores.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Tabuleiro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/UserInput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Peca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Peca.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -27,7 +41,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -50,7 +64,7 @@
     "git-widget-placeholder": "branch2",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/joao-/OneDrive/Documentos/GitHub/Picaria_LDP",
+    "last_opened_file_path": "C:/Users/joao-/OneDrive/Documentos/GitHub/Tic-Tac-Toe",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -68,6 +82,8 @@
       <option name="presentableId" value="Default" />
       <updated>1711463590764</updated>
       <workItem from="1711463591695" duration="1030000" />
+      <workItem from="1711470704903" duration="36000" />
+      <workItem from="1714121948165" duration="4150000" />
     </task>
     <servers />
   </component>
