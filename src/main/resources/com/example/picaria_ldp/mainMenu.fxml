@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.picaria_ldp.MainMenuController">
+   <children>
+      <Text layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Picaria" textAlignment="CENTER" wrappingWidth="600.0">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Text>
+      <VBox layoutX="71.0" layoutY="168.0" prefHeight="125.0" prefWidth="160.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="160.0" text="Jogar" />
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="160.0" text="Sair">
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <AnchorPane layoutX="389.0" layoutY="155.0" prefHeight="150.0" prefWidth="150.0">
+         <children>
+            <ListView prefHeight="150.0" prefWidth="150.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
