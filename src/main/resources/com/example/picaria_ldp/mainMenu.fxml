@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.picaria_ldp.MainMenuController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: lightgreen;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.picaria_ldp.MainMenuController">
    <children>
       <Text layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Picaria" textAlignment="CENTER" wrappingWidth="600.0" AnchorPane.bottomAnchor="310.451171875" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="23.044921875">
          <font>
@@ -14,11 +14,11 @@
       </Text>
       <VBox layoutX="48.0" layoutY="183.0" prefHeight="125.0" prefWidth="160.0" AnchorPane.bottomAnchor="69.80000000000001" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="392.0" AnchorPane.topAnchor="183.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="160.0" text="Jogar">
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="160.0" style="-fx-border-color: black; -fx-font-weight: bold;" text="Jogar" textAlignment="CENTER">
                <font>
                   <Font name="Trebuchet MS" size="12.0" />
                </font></Button>
-            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="160.0" text="Adicionar Jogadores">
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="160.0" style="-fx-border-color: black; -fx-font-weight: bold;" text="Adicionar Jogadores" textAlignment="CENTER">
                <VBox.margin>
                   <Insets top="7.0" />
                </VBox.margin>
@@ -26,7 +26,7 @@
                   <Font name="Trebuchet MS" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="36.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="160.0" text="Como Jogar">
+            <Button layoutX="10.0" layoutY="36.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="160.0" style="-fx-border-color: black; -fx-font-weight: bold;" text="Como Jogar" textAlignment="CENTER">
                <VBox.margin>
                   <Insets top="7.0" />
                </VBox.margin>
@@ -34,7 +34,7 @@
                   <Font name="Trebuchet MS" size="12.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="160.0" text="Sair">
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="160.0" style="-fx-border-color: black; -fx-font-weight: bold; -fx-background-color: red;" text="Sair" textAlignment="CENTER" textFill="WHITE">
                <VBox.margin>
                   <Insets top="55.0" />
                </VBox.margin>
@@ -46,12 +46,12 @@
       </VBox>
       <AnchorPane layoutX="406.0" layoutY="117.0" prefHeight="272.0" prefWidth="150.0" AnchorPane.bottomAnchor="37.0" AnchorPane.leftAnchor="406.0" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="117.0">
          <children>
-            <Text layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HighScores" textAlignment="CENTER" wrappingWidth="150.0" AnchorPane.bottomAnchor="241.8896484375" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="13.8544921875">
+            <Text fontSmoothingType="LCD" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="HighScores" textAlignment="CENTER" wrappingWidth="150.0" AnchorPane.bottomAnchor="241.8896484375" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="13.8544921875">
                <font>
                   <Font name="Trebuchet MS" size="14.0" />
                </font>
             </Text>
-            <ListView layoutY="36.0" prefHeight="236.0" prefWidth="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="36.0" />
+            <ListView layoutY="36.0" prefHeight="236.0" prefWidth="150.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="36.0" />
          </children>
       </AnchorPane>
    </children>
