@@ -8,7 +8,7 @@ public class ListaNodes {
         this.head = null;
     }
 
-
+/*
     public void addNode(Peca peca) {
         Node newNode = new Node(peca);
         if (head == null) {
@@ -69,5 +69,5 @@ public class ListaNodes {
             System.out.println();
             current = current.c; // Movendo para o próximo nó na lista ligada (direção sul)
         }
-    }
+    }*/
 }
