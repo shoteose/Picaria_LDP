@@ -4,7 +4,7 @@ public class Game {
 
     private Tabuleiro tabuleiro;
     private UserInput input;
-    private LinkedList<Jogador> jogadores = new LinkedList<Jogador>();
+    private LinkedList<Jogador> jogadores = new LinkedList<>();
 
     public Game(Tabuleiro tabuleiro, UserInput input) {
         this.tabuleiro = tabuleiro;

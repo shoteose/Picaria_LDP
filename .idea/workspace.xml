@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ce2d53f-01c8-45b0-b178-19b0a7bd59b2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/jogadorMix.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/ListaNodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/ListaNodes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/hello-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/mainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/mainMenu.fxml" afterDir="false" />
     </list>
@@ -63,7 +61,7 @@
     &quot;git-widget-placeholder&quot;: &quot;branch2&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/joao-/OneDrive/Documentos/GitHub/JogoDoGalo&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Paulo Novo/Documents/GitHub/Picaria_LDP&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -89,6 +87,8 @@
       <workItem from="1714468839570" duration="2637000" />
       <workItem from="1714499755990" duration="3999000" />
       <workItem from="1714592771234" duration="4994000" />
+      <workItem from="1714675714873" duration="985000" />
+      <workItem from="1714679930700" duration="2290000" />
     </task>
     <servers />
   </component>
