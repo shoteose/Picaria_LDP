@@ -9,8 +9,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.text.*;
 import javafx.stage.Stage;
+import javafx.scene.control.Button;
+import javafx.scene.Node;
 
 
 import java.net.URL;
@@ -57,6 +58,13 @@ public class MainMenuController implements Initializable {
 
     }
 
+    @FXML protected void goPlay(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("jogadorMix.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
     @FXML
     public void mudaCenaCriar() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("createPlayer.fxml"));
@@ -65,6 +73,14 @@ public class MainMenuController implements Initializable {
         stage.setTitle("Picaria");
         this.stage.setScene(scene);
         this.stage.show();
+    }
+
+    @FXML protected void infoGame(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("howTo.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     public void setStage(Stage stage) {

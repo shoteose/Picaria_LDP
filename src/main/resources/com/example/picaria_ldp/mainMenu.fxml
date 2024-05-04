@@ -14,7 +14,7 @@
       </Text>
       <VBox layoutX="48.0" layoutY="183.0" prefHeight="125.0" prefWidth="160.0" AnchorPane.bottomAnchor="69.80000000000001" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="392.0" AnchorPane.topAnchor="183.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="160.0" style="-fx-border-color: black; -fx-font-weight: bold;" text="Jogar" textAlignment="CENTER">
+            <Button mnemonicParsing="false" onAction="#goPlay" prefHeight="25.0" prefWidth="160.0" style="-fx-border-color: black; -fx-font-weight: bold;" text="Jogar" textAlignment="CENTER">
                <font>
                   <Font name="Trebuchet MS" size="12.0" />
                </font></Button>
@@ -26,7 +26,7 @@
                   <Font name="Trebuchet MS" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="36.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="160.0" style="-fx-border-color: black; -fx-font-weight: bold;" text="Como Jogar" textAlignment="CENTER">
+            <Button layoutX="10.0" layoutY="36.0" mnemonicParsing="false" onAction="#infoGame" prefHeight="25.0" prefWidth="160.0" style="-fx-border-color: black; -fx-font-weight: bold;" text="Como Jogar" textAlignment="CENTER">
                <VBox.margin>
                   <Insets top="7.0" />
                </VBox.margin>
