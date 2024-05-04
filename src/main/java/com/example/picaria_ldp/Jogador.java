@@ -12,6 +12,13 @@ public class Jogador {
 
     }
 
+    public Jogador(String nome, int a){
+
+        this.nome=nome;
+        this.counterWins=a;
+
+    }
+
     public String getNome() {
         return nome;
     }
