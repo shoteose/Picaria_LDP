@@ -2,7 +2,7 @@ package com.example.picaria_ldp;
 
 public class Peca {
 
-    int id;
+    private int id;
 
     public Peca(int id) {
         this.id = id;

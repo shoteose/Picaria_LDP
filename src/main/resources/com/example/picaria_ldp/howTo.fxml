@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: lightgreen;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.picaria_ldp.howTo">
+    <children>
+        <Text layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Como jogar" textAlignment="CENTER" wrappingWidth="600.0" AnchorPane.bottomAnchor="310.451171875" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="23.044921875">
+            <font>
+                <Font name="Trebuchet MS Bold" size="50.0" />
+            </font>
+        </Text>
+        <Button layoutX="254.0" layoutY="330.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="94.0" style="-fx-border-color: black; -fx-font-weight: bold; -fx-background-color: red;" text="Voltar" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font name="Trebuchet MS" size="12.0" />
+            </font>
+        </Button>
+      <Text layoutX="51.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-line-spacing: 1.5;" text="O jogo começa com cada jogador, por sua vez, colocando uma peça em um dos espaços, exceto no centro. Após as três peças serem colocadas nos espaços, o jogador pode mover uma peça por turno ao longo das linhas (verticalmente, horizontalmente ou diagonalmente) para tentar alinhar três peças. Nesse momento, já é permitido mover as peças para ocupar o centro." textAlignment="CENTER" wrappingWidth="499.0">
+         <font>
+            <Font name="Trebuchet MS" size="18.0" />
+         </font>
+      </Text>
+    </children>
+</AnchorPane>

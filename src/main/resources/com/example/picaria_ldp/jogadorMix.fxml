@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: lightgreen;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.picaria_ldp.HelloController">
+   <children>
+      <ChoiceBox layoutX="99.0" layoutY="132.0" prefWidth="150.0" style="-fx-border-color: black;" />
+      <ChoiceBox layoutX="380.0" layoutY="132.0" prefWidth="150.0" style="-fx-border-color: black;" />
+      <Button layoutX="249.0" layoutY="314.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="132.0" style="-fx-border-color: black; -fx-font-weight: bold;" text="Jogar" />
+      <Text fill="RED" fontSmoothingType="LCD" layoutX="99.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jogador 1" textAlignment="CENTER" wrappingWidth="150.39999999999998">
+         <font>
+            <Font name="Trebuchet MS Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="RED" fontSmoothingType="LCD" layoutX="380.0" layoutY="111.0" lineSpacing="1.5" strokeType="OUTSIDE" strokeWidth="0.0" text="Jogador 2" textAlignment="CENTER" wrappingWidth="150.39999999999998">
+         <font>
+            <Font name="Trebuchet MS Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text fontSmoothingType="LCD" layoutX="37.0" layoutY="52.0" lineSpacing="1.5" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Escolha de jogadores" textAlignment="CENTER" wrappingWidth="526.4">
+         <font>
+            <Font name="Trebuchet MS Bold" size="40.0" />
+         </font>
+      </Text>
+      <CheckBox layoutX="99.0" layoutY="176.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="150.0" text="Pronto!" />
+      <CheckBox layoutX="380.0" layoutY="179.0" mnemonicParsing="false" text="Pronto!" />
+   </children>
+</AnchorPane>
