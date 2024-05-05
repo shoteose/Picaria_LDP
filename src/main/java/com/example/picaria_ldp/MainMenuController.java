@@ -28,27 +28,12 @@ public class MainMenuController implements Initializable {
 
     private Stage stage;
     private Scene scene;
-    private Parent root;
-    public LinkedList<Jogador> Jogadores= new LinkedList<Jogador>();
+    public static LinkedList<Jogador> Jogadores= new LinkedList<Jogador>();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        Jogador asd= new Jogador("joao",2);
-        Jogador aaa= new Jogador("konas",8);
-        Jogador bbb= new Jogador("hugo",9);
-        Jogador ccc= new Jogador("lol",1);
-        Jogadores.add(asd);
-        Jogadores.add(aaa);
-        Jogadores.add(bbb);
-        Jogadores.add(ccc);
-
-        Collections.sort(Jogadores, new Comparator<Jogador>() {
-            @Override
-            public int compare(Jogador j1, Jogador j2) {
-                return Integer.compare(j2.getCounterWins(), j1.getCounterWins());
-            }
-        });
+        ordenarHighScore();
 
         for(Jogador qwe: Jogadores){
             String listViewHighScore = qwe.getNome() + " : " + qwe.getCounterWins();
@@ -65,15 +50,20 @@ public class MainMenuController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-    @FXML
-    public void mudaCenaCriar() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("createPlayer.fxml"));
-        Parent root = fxmlLoader.load();
-        Scene scene = new Scene(root);
-        stage.setTitle("Picaria");
-        this.stage.setScene(scene);
-        this.stage.show();
+
+    @FXML protected void mudaCenaCriar(ActionEvent event) throws IOException {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("createPlayer.fxml"));
+            Parent root = fxmlLoader.load();
+            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
 
     @FXML protected void infoGame(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("howTo.fxml"));
@@ -81,6 +71,42 @@ public class MainMenuController implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    @FXML
+    protected void voltar(ActionEvent event) throws IOException {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
+            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void ordenarHighScore() {
+
+        Collections.sort(Jogadores, new Comparator<Jogador>() {
+            @Override
+            public int compare(Jogador j1, Jogador j2) {
+                return Integer.compare(j2.getCounterWins(), j1.getCounterWins());
+            }
+        });
+
+    }
+
+    public void listarJogadores() {
+
+        for(Jogador jogador: Jogadores){
+            System.out.println(jogador.getNome() + " : " + jogador.getCounterWins());
+        }
+
+    }
+    public void addJogador(Jogador jogador) {
+
+        Jogadores.add(jogador);
     }
 
     public void setStage(Stage stage) {
