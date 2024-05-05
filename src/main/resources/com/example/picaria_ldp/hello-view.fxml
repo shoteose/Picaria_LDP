@@ -5,20 +5,20 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: lightgreen;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.picaria_ldp.selectJogador">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="421.8" prefWidth="600.0" style="-fx-background-color: lightgreen;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.picaria_ldp.selectJogador">
   <children>
-      <Line endX="316.0" endY="336.0" startX="412.5" startY="245.5" strokeWidth="2.0" />
-      <Line endX="415.0" endY="225.2928924560547" startX="300.20709228515625" startY="113.70709228515625" strokeWidth="2.0" />
-      <Line endX="300.70709228515625" endY="114.20710754394531" startX="300.70709228515625" startY="336.0" strokeWidth="2.0" />
       <Line endX="424.0" endY="235.39646911621094" startX="173.79290771484375" startY="233.75" strokeWidth="2.0" />
-      <Line endX="300.0" endY="353.29290771484375" startX="174.29290771484375" startY="233.75" strokeWidth="2.0" />
-      <Line endX="291.0" endY="123.29289245605469" startX="173.29290771484375" startY="233.75" strokeWidth="2.0" />
-      <Line endX="424.0" endY="113.99998474121094" startX="198.5" startY="329.5" strokeWidth="2.0" />
-      <Line endX="405.0" endY="335.29290771484375" startX="173.79290771484375" startY="114.20709228515625" strokeWidth="2.0" />
       <Line endX="423.5" endY="356.29290771484375" startX="423.5" startY="114.5" strokeWidth="2.0" />
       <Line endX="416.0" endY="113.49998474121094" startX="174.5" startY="113.5" strokeWidth="2.0" />
-      <Line endX="415.0" endY="353.79290771484375" startX="173.29290771484375" startY="353.79290771484375" strokeWidth="2.0" />
       <Line endX="173.79290771484375" endY="353.29290771484375" startX="173.79290771484375" startY="114.20709228515625" strokeWidth="2.0" />
+      <Line endX="174.5" endY="373.5" startX="424.29290771484375" startY="373.5" strokeWidth="2.0" />
+      <Line endX="413.0" endY="364.29290771484375" startX="174.79290771484375" startY="113.20709228515625" strokeWidth="2.0" />
+      <Line endX="183.0" endY="365.7071533203125" startX="414.4141845703125" startY="124.5" strokeWidth="2.0" />
+      <Line endX="299.396484375" endY="374.5" startX="299.396484375" startY="114.91421508789062" strokeWidth="2.0" />
+      <Line endX="292.0" endY="123.08578491210938" startX="172.79290771484375" startY="244.5" strokeWidth="2.0" />
+      <Line endX="414.4141845703125" endY="255.2928924560547" startX="299.396484375" startY="372.5" strokeWidth="2.0" />
+      <Line endX="181.5858154296875" endY="252.2928924560547" layoutX="2.0" startX="287.5" startY="365.7071228027344" strokeWidth="2.0" />
+      <Line endX="437.0" endY="261.29290771484375" startX="300.396484375" startY="113.91421508789062" strokeWidth="2.0" />
   <GridPane alignment="CENTER" layoutX="150.0" layoutY="49.0" prefHeight="300.0" prefWidth="300.0" style="-fx-hgap: 12;" translateY="35.0" AnchorPane.bottomAnchor="51.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="49.0">
     <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

@@ -5,34 +5,38 @@ import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
-public class Main extends Application{
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import java.util.Scanner;
 
-    public static Tabuleiro tabuleiro;
-    public static UserInput input;
-    public static Game game;
+public class Main {
 
-    @Override
-    public void start(Stage stage) {
+    public static Game game = new Game();
+    public static Socket s;
+    public final static int ServerPort = 1234;
+
+    public static void main(String[] args) throws UnknownHostException, IOException {
+        game.main(args);
+
         try {
-
-            Parent root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-
-        } catch(Exception e) {
-            e.printStackTrace();
+// Cria um socket para comunicar com o servidor
+            s = new Socket("localhost", 6666);
+// Após conectar obtem o Stream (DataStream) do servidor
+            DataOutputStream dos = new DataOutputStream(s.getOutputStream());
+// Escreve dados no Stream
+            dos.writeUTF("Olá servidor.");
+// Envia dados
+            dos.flush();
+// Fecha Stream e coneção
+            dos.close();
+            s.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
-    }
-    public static void main(String[] args) {
-
-        tabuleiro = new Tabuleiro();
-        input = new UserInput();
-        game = new Game(tabuleiro, input);
-        game.start();
-
-        launch(args);
 
     }
-
 }

@@ -84,7 +84,7 @@
             <!-- Default configuration for running with: mvn clean javafx:run -->
             <id>default-cli</id>
             <configuration>
-              <mainClass>com.example.picaria_ldp/com.example.picaria_ldp.HelloApplication</mainClass>
+              <mainClass>com.example.picaria_ldp/com.example.picaria_ldp.Game</mainClass>
               <launcher>app</launcher>
               <jlinkZipName>app</jlinkZipName>
               <jlinkImageName>app</jlinkImageName>

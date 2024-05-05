@@ -7,6 +7,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.paint.Color;
+import javafx.scene.text.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -14,9 +16,13 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class createPlayerController extends MainMenuController {
-    
+
     @FXML
     private TextField inputUsername;
+    @FXML
+    private Button botaoCriarJogador;
+    @FXML
+    private Text errorName;
     private Stage stage;
     private Scene scene;
 
@@ -40,9 +46,20 @@ public class createPlayerController extends MainMenuController {
     @FXML
     protected void criarJogador(ActionEvent e) throws IOException {
 
-        Jogador jogador = new Jogador(this.inputUsername.getText());
-        MainMenuController.Jogadores.add(jogador);
-        inputUsername.clear();
+
+        if(!this.inputUsername.getText().isEmpty()) {
+            this.botaoCriarJogador.setDisable(true);
+            Jogador jogador = new Jogador(this.inputUsername.getText());
+            MainMenuController.Jogadores.add(jogador);
+            inputUsername.clear();
+            
+        }else{
+            errorName.setFill(Color.RED);
+            errorName.setText("Nome inválido! Tente de Novo");
+
+        }
+
+
     }
 
     public void setStage(Stage stage) {

@@ -5,13 +5,19 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: lightgreen;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.picaria_ldp.MainMenuController">
+<AnchorPane prefHeight="421.8" prefWidth="600.0" style="-fx-background-color: lightgreen;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.picaria_ldp.MainMenuController">
    <children>
       <Text layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Picaria" textAlignment="CENTER" wrappingWidth="600.0">
          <font>
             <Font name="Trebuchet MS Bold" size="50.0" />
          </font>
       </Text>
+      <Text fontSmoothingType="LCD" layoutX="409.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Top Players" textAlignment="CENTER" wrappingWidth="150.0">
+         <font>
+            <Font name="Trebuchet MS" size="14.0" />
+         </font>
+      </Text>
+      <ListView fx:id="highscore" layoutX="409.0" layoutY="137.0" prefHeight="215.0" prefWidth="150.0" style="-fx-border-color: black;" />
       <VBox layoutX="48.0" layoutY="183.0" prefHeight="125.0" prefWidth="160.0" AnchorPane.bottomAnchor="69.80000000000001" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="392.0" AnchorPane.topAnchor="183.0">
          <children>
             <Button mnemonicParsing="false" onAction="#goPlay" prefHeight="25.0" prefWidth="160.0" style="-fx-border-color: black; -fx-font-weight: bold;" text="Jogar" textAlignment="CENTER">
@@ -44,15 +50,5 @@
             </Button>
          </children>
       </VBox>
-      <AnchorPane layoutX="406.0" layoutY="117.0" prefHeight="272.0" prefWidth="150.0" AnchorPane.bottomAnchor="37.0" AnchorPane.leftAnchor="406.0" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="117.0">
-         <children>
-            <Text fontSmoothingType="LCD" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="HighScores" textAlignment="CENTER" wrappingWidth="150.0">
-               <font>
-                  <Font name="Trebuchet MS" size="14.0" />
-               </font>
-            </Text>
-            <ListView fx:id="highscore" layoutY="36.0" prefHeight="236.0" prefWidth="150.0" style="-fx-border-color: black;" />
-         </children>
-      </AnchorPane>
    </children>
 </AnchorPane>

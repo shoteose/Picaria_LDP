@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: lightgreen;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.picaria_ldp.createPlayerController">
+<AnchorPane prefHeight="421.8" prefWidth="600.0" style="-fx-background-color: lightgreen;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.picaria_ldp.createPlayerController">
     <children>
         <Text layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Criar Jogador" textAlignment="CENTER" wrappingWidth="600.0" AnchorPane.bottomAnchor="310.451171875" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="23.044921875">
             <font>
@@ -27,5 +27,6 @@
          </font>
       </Label>
       <TextField fx:id="inputUsername" layoutX="171.0" layoutY="195.0" prefHeight="25.0" prefWidth="259.0" />
+      <Text fx:id="errorName" layoutX="171.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="259.0" />
     </children>
 </AnchorPane>
