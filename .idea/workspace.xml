@@ -5,19 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8088fce2-160f-4e4d-b564-0b7294f0c881" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MainServidor/src/ServidorGlobal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servidor/src/Servidor.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/HelloApplication.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Peca.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Tabuleiro.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/UserInput.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/MainMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/createPlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/createPlayerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/selectJogador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/selectJogador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/createPlayer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/createPlayer.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/howTo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/howTo.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/jogadorMix.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/jogadorMix.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/mainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/mainMenu.fxml" afterDir="false" />
     </list>
@@ -29,6 +26,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -39,9 +37,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2g2vW8ZRk1o6tw7kukJqXg4yUDB" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -55,7 +53,10 @@
     "Application.Game.executor": "Run",
     "Application.HelloApplication.executor": "Run",
     "Application.Main.executor": "Run",
+    "Application.MainMenuController.executor": "Run",
     "Application.Servidor.executor": "Run",
+    "Application.ServidorGlobal.executor": "Run",
+    "Application.createPlayerController.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "branch2",
@@ -75,6 +76,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\joao-\OneDrive\Documentos\GitHub\Picaria_LDP\MainServidor\src" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Game" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.picaria_ldp.Game" />
@@ -99,6 +105,9 @@
       <option name="presentableId" value="Default" />
       <updated>1714908515192</updated>
       <workItem from="1714908516224" duration="14118000" />
+      <workItem from="1714987340512" duration="1043000" />
+      <workItem from="1714991095862" duration="5428000" />
+      <workItem from="1714999891594" duration="569000" />
     </task>
     <servers />
   </component>

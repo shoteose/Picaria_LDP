@@ -1,5 +1,3 @@
-package com.example.picaria_ldp;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -7,14 +5,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Game extends Application {
+public class server extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("createPlayer.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("servidor.fxml"));
         stage.setResizable(false);
         Scene scene = new Scene(fxmlLoader.load(), 600, 421.8);
-        stage.setTitle("Picaria");
+        stage.setTitle("Server Manager");
         stage.setScene(scene);
         stage.show();
     }
@@ -22,4 +20,5 @@ public class Game extends Application {
     public static void main(String[] args) {
         launch();
     }
+}
 }

@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="421.8" prefWidth="600.0" style="-fx-background-color: lightgreen;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.picaria_ldp.MainMenuController">
+<AnchorPane prefHeight="421.8" prefWidth="600.0" style="-fx-background-color: lightgreen;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.picaria_ldp.MainMenuController">
    <children>
       <Text layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Picaria" textAlignment="CENTER" wrappingWidth="600.0">
          <font>
@@ -24,14 +24,6 @@
                <font>
                   <Font name="Trebuchet MS" size="12.0" />
                </font></Button>
-            <Button fx:id="botaoCriarJogador" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#mudaCenaCriar" prefHeight="25.0" prefWidth="160.0" style="-fx-border-color: black; -fx-font-weight: bold;" text="Criar Jogador" textAlignment="CENTER">
-               <VBox.margin>
-                  <Insets top="7.0" />
-               </VBox.margin>
-               <font>
-                  <Font name="Trebuchet MS" size="12.0" />
-               </font>
-            </Button>
             <Button layoutX="10.0" layoutY="36.0" mnemonicParsing="false" onAction="#infoGame" prefHeight="25.0" prefWidth="160.0" style="-fx-border-color: black; -fx-font-weight: bold;" text="Como Jogar" textAlignment="CENTER">
                <VBox.margin>
                   <Insets top="7.0" />

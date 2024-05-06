@@ -18,7 +18,7 @@ import java.net.URL;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
 
-public class MainMenuController implements Initializable {
+public class MainMenuController extends Main implements Initializable {
 
     @FXML
     private ListView<String> highscore;
@@ -28,7 +28,7 @@ public class MainMenuController implements Initializable {
 
     private Stage stage;
     private Scene scene;
-    public static LinkedList<Jogador> Jogadores= new LinkedList<Jogador>();
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -49,19 +49,6 @@ public class MainMenuController implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-    }
-
-    @FXML protected void mudaCenaCriar(ActionEvent event) throws IOException {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("createPlayer.fxml"));
-            Parent root = fxmlLoader.load();
-            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
 

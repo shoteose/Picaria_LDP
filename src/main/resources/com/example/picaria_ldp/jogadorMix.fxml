@@ -4,11 +4,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="421.8" prefWidth="600.0" style="-fx-background-color: lightgreen;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.picaria_ldp.selectJogador">
+<AnchorPane prefHeight="421.8" prefWidth="600.0" style="-fx-background-color: lightgreen;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.picaria_ldp.selectJogador">
    <children>
       <ChoiceBox layoutX="99.0" layoutY="183.0" prefWidth="150.0" style="-fx-border-color: black;" />
       <ChoiceBox layoutX="380.0" layoutY="183.0" prefWidth="150.0" style="-fx-border-color: black;" />
-      <Button layoutX="234.0" layoutY="328.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="132.0" style="-fx-border-color: black; -fx-font-weight: bold;" text="Jogar" />
+      <Button layoutX="234.0" layoutY="328.0" mnemonicParsing="false" onAction="#mandaMensagem" prefHeight="26.0" prefWidth="132.0" style="-fx-border-color: black; -fx-font-weight: bold;" text="Jogar" />
       <Text fill="RED" fontSmoothingType="LCD" layoutX="99.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jogador 1" textAlignment="CENTER" wrappingWidth="150.39999999999998">
          <font>
             <Font name="Trebuchet MS Bold" size="20.0" />

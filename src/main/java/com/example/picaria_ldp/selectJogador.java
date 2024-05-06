@@ -8,9 +8,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 
-public class selectJogador {
+public class selectJogador extends Main{
 
     private Stage stage;
     private Scene scene;
@@ -26,6 +28,28 @@ public class selectJogador {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public  void mandaMensagem(){
+
+
+
+            Thread sendMessage = new Thread(new Runnable() {
+                @Override
+                public void run() {
+
+                    String msg = "teste";
+                    try {
+                        dos.writeUTF(msg);
+                    } catch (IOException e) {
+                    }
+
+
+                }
+            });
+
+            sendMessage.start();
+
     }
 
     public void setStage(Stage stage) {
