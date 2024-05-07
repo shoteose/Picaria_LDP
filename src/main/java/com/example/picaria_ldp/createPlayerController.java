@@ -11,7 +11,11 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.*;
 import javafx.stage.Stage;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
+import java.net.InetAddress;
+import java.net.Socket;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -19,6 +23,10 @@ public class createPlayerController extends Main {
 
     @FXML
     private TextField inputUsername;
+    @FXML
+    private TextField inputAdrr;
+    @FXML
+    private TextField inputPorta;
     @FXML
     private Button botaoCriarJogador;
     @FXML
@@ -51,16 +59,38 @@ public class createPlayerController extends Main {
         readMessage.start();
 
     }
-
-
     @FXML
     protected void criarJogador(ActionEvent e) throws IOException {
+
+
+
+        try {
+            ip= InetAddress.getByName(inputAdrr.getText());
+            ServerPort = Integer.parseInt(inputPorta.getText());
+            s = new Socket(ip, ServerPort);
+
+        }catch (Exception ex) {
+            System.out.println(ex.getMessage());
+
+            this.errorName.setText("Erro ao conectar ao servidor!! Tente novamente");
+            this.inputUsername.setText("");
+            this.inputAdrr.setText("");
+            this.inputPorta.setText("");
+
+        }
+
+        dos = new DataOutputStream(s.getOutputStream());
+        dis = new DataInputStream(s.getInputStream());
+
+
 
         String mens;
         boolean existeUsername = Jogadores.contains(this.inputUsername.getText());
 
         // Existe esse jogadro, logo envia para o servidor o seu nome e suas wins
-        if(existeUsername){
+        if(!existeUsername){
+
+            this.botaoCriarJogador.setDisable(true);
 
             Thread sendMessage = new Thread(new Runnable() {
                 @Override
@@ -91,11 +121,11 @@ public class createPlayerController extends Main {
 
             sendMessage.start();
 
-            Parent root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
+           /* Parent root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
             stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
-            stage.show();
+            stage.show();*/
 
 
         }else{
@@ -128,11 +158,11 @@ public class createPlayerController extends Main {
 
             sendMessage.start();
 
-            Parent root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
+            /*Parent root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
             stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
-            stage.show();
+            stage.show();*/
 
             
         }else{

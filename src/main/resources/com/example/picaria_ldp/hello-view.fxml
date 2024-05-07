@@ -5,7 +5,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="421.8" prefWidth="600.0" style="-fx-background-color: lightgreen;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.picaria_ldp.selectJogador">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="421.8" prefWidth="600.0" style="-fx-background-color: lightgreen;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.picaria_ldp.jogoController">
   <children>
       <Line endX="424.0" endY="235.39646911621094" startX="173.79290771484375" startY="233.75" strokeWidth="2.0" />
       <Line endX="423.5" endY="356.29290771484375" startX="423.5" startY="114.5" strokeWidth="2.0" />
@@ -35,67 +35,67 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
     </rowConstraints>
     <children>
-      <Button fx:id="Button1" focusTraversable="false" mnemonicParsing="false" onAction="#setupButton" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: black; -fx-border-width: 2px;">
+      <Button fx:id="Button1" focusTraversable="false" mnemonicParsing="false"  prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: black; -fx-border-width: 2px;">
         <font>
           <Font size="18.0" />
         </font>
             </Button>
-      <Button fx:id="Button2" focusTraversable="false" mnemonicParsing="false" onAction="#setupButton" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: black; -fx-border-width: 2px;" GridPane.columnIndex="2">
+      <Button fx:id="Button2" focusTraversable="false" mnemonicParsing="false"  prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: black; -fx-border-width: 2px;" GridPane.columnIndex="2">
         <font>
           <Font size="18.0" />
         </font>
             </Button>
-      <Button fx:id="Button3" focusTraversable="false" mnemonicParsing="false" onAction="#setupButton" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: black; -fx-border-width: 2px;" GridPane.columnIndex="4">
+      <Button fx:id="Button3" focusTraversable="false" mnemonicParsing="false"  prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: black; -fx-border-width: 2px;" GridPane.columnIndex="4">
         <font>
           <Font size="18.0" />
         </font>
             </Button>
-      <Button fx:id="Button4" focusTraversable="false" mnemonicParsing="false" onAction="#setupButton" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: black; -fx-border-width: 2px;" GridPane.columnIndex="3" GridPane.rowIndex="1">
+      <Button fx:id="Button4" focusTraversable="false" mnemonicParsing="false"  prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: black; -fx-border-width: 2px;" GridPane.columnIndex="3" GridPane.rowIndex="1">
         <font>
           <Font size="18.0" />
         </font>
             </Button>
-      <Button fx:id="Button5" focusTraversable="false" mnemonicParsing="false" onAction="#setupButton" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: black; -fx-border-width: 2px;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <Button fx:id="Button5" focusTraversable="false" mnemonicParsing="false"  prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: black; -fx-border-width: 2px;" GridPane.columnIndex="1" GridPane.rowIndex="1">
         <font>
           <Font size="18.0" />
         </font>
             </Button>
-      <Button fx:id="Button6" focusTraversable="false" mnemonicParsing="false" onAction="#setupButton" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: black; -fx-border-width: 2px;" GridPane.rowIndex="2">
+      <Button fx:id="Button6" focusTraversable="false" mnemonicParsing="false"  prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: black; -fx-border-width: 2px;" GridPane.rowIndex="2">
         <font>
           <Font size="18.0" />
         </font>
             </Button>
-      <Button fx:id="Button7" focusTraversable="false" mnemonicParsing="false" onAction="#setupButton" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: black; -fx-border-width: 2px;" GridPane.columnIndex="2" GridPane.rowIndex="2">
+      <Button fx:id="Button7" focusTraversable="false" mnemonicParsing="false"  prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: black; -fx-border-width: 2px;" GridPane.columnIndex="2" GridPane.rowIndex="2">
         <font>
           <Font size="18.0" />
         </font>
             </Button>
-      <Button fx:id="Button8" focusTraversable="false" mnemonicParsing="false" onAction="#setupButton" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: black; -fx-border-width: 2px;" GridPane.columnIndex="4" GridPane.rowIndex="2">
+      <Button fx:id="Button8" focusTraversable="false" mnemonicParsing="false"  prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: black; -fx-border-width: 2px;" GridPane.columnIndex="4" GridPane.rowIndex="2">
         <font>
           <Font size="18.0" />
         </font>
             </Button>
-      <Button fx:id="Button9" focusTraversable="false" mnemonicParsing="false" onAction="#setupButton" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: black; -fx-border-width: 2px;" GridPane.columnIndex="3" GridPane.rowIndex="3">
+      <Button fx:id="Button9" focusTraversable="false" mnemonicParsing="false"  prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: black; -fx-border-width: 2px;" GridPane.columnIndex="3" GridPane.rowIndex="3">
         <font>
           <Font size="18.0" />
         </font>
             </Button>
-            <Button fx:id="Button10" focusTraversable="false" layoutX="127.0" layoutY="128.0" mnemonicParsing="false" onAction="#setupButton" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: black; -fx-border-width: 2px;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Button fx:id="Button10" focusTraversable="false" layoutX="127.0" layoutY="128.0" mnemonicParsing="false"  prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: black; -fx-border-width: 2px;" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="Button11" focusTraversable="false" layoutX="49.0" layoutY="128.0" mnemonicParsing="false" onAction="#setupButton" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: black; -fx-border-width: 2px;" GridPane.rowIndex="4">
+            <Button fx:id="Button11" focusTraversable="false" layoutX="49.0" layoutY="128.0" mnemonicParsing="false"  prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: black; -fx-border-width: 2px;" GridPane.rowIndex="4">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="Button12" focusTraversable="false" layoutX="10.0" layoutY="168.0" mnemonicParsing="false" onAction="#setupButton" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: black; -fx-border-width: 2px;" GridPane.columnIndex="2" GridPane.rowIndex="4">
+            <Button fx:id="Button12" focusTraversable="false" layoutX="10.0" layoutY="168.0" mnemonicParsing="false"  prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: black; -fx-border-width: 2px;" GridPane.columnIndex="2" GridPane.rowIndex="4">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="Button13" focusTraversable="false" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#setupButton" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: black; -fx-border-width: 2px;" GridPane.columnIndex="4" GridPane.rowIndex="4">
+            <Button fx:id="Button13" focusTraversable="false" layoutX="10.0" layoutY="10.0" mnemonicParsing="false"  prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: black; -fx-border-width: 2px;" GridPane.columnIndex="4" GridPane.rowIndex="4">
                <font>
                   <Font size="18.0" />
                </font>
@@ -116,5 +116,6 @@
             <Font name="Trebuchet MS" size="14.0" />
          </font>
       </Text>
+      <Button fx:id="butaoEndTurn" layoutX="490.0" layoutY="373.0" mnemonicParsing="false" text="Acabar Turno" />
   </children>
 </AnchorPane>
