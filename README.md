@@ -32,11 +32,3 @@ Tecnologias usadas no projeto:
 
 *   Java
 *   JavaFX
-
-<h2>💻 Feito em </h2>
-
-Tecnologias utilizadas no projeto:
-
-*   HTML 5
-*   JavaScript
-*   CSS
