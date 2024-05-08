@@ -44,7 +44,7 @@ public class MainMenuController extends Main implements Initializable {
     }
 
     @FXML protected void goPlay(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("jogadorMix.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("esperaJogo.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -61,16 +61,12 @@ public class MainMenuController extends Main implements Initializable {
     }
 
     @FXML
-    protected void voltar(ActionEvent event) throws IOException {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
-            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    protected void fechar(ActionEvent event) throws IOException {
+
+        sendMessageServer("logout");
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        stage.close();
+
     }
 
     public void ordenarHighScore() {

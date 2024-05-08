@@ -1,7 +1,15 @@
 package com.example.picaria_ldp;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.net.Socket;
+
 public class Jogador {
 
+    private String name;
+    private DataInputStream dis;
+    private DataOutputStream dos;
+    Socket s;
     private String nome;
     private int counterWins;
 

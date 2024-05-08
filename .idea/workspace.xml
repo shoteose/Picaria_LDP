@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8088fce2-160f-4e4d-b564-0b7294f0c881" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/esperaJogo.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Jogador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Jogador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/MainMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/createPlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/createPlayerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/jogoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/jogoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/selectJogador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/esperaJogoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/createPlayer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/createPlayer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/jogo.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/jogadorMix.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/mainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/mainMenu.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +64,7 @@
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-21&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Paulo Novo/Documents/GitHub/Picaria_LDP&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Paulo Novo/Documents/GitHub/Picaria_LDP_Servidor&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -77,8 +84,11 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\joao-\OneDrive\Documentos\GitHub\Picaria_LDP\MainServidor\src" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.picaria_ldp" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Game" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.picaria_ldp.Game" />
       <module name="Picaria_LDP" />
@@ -92,6 +102,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.picaria_ldp.Main" />
+      <module name="Picaria_LDP" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.picaria_ldp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -107,6 +135,8 @@
       <workItem from="1714999891594" duration="569000" />
       <workItem from="1715006517336" duration="3896000" />
       <workItem from="1715031651160" duration="152000" />
+      <workItem from="1715102837657" duration="4992000" />
+      <workItem from="1715160120347" duration="5160000" />
     </task>
     <servers />
   </component>

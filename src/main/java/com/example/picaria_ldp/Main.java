@@ -11,13 +11,11 @@ public class Main {
     public static Socket s;
     public static int ServerPort;
     public InetAddress ip;
-
     public static LinkedList<Jogador> Jogadores= new LinkedList<Jogador>();
-
     public static DataInputStream dis;
     public static DataOutputStream dos;
 
-
+    public Jogador jogador;
     public static void main(String[] args) throws UnknownHostException, IOException {
 
 
@@ -34,6 +32,47 @@ public class Main {
 
     }
 
-    public void initialize(URL url, ResourceBundle resourceBundle) {}
+    public void sendMessageServer(String msg) throws IOException {
 
+        Thread sendMessage = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+
+                    dos.writeUTF(msg);
+
+                } catch (IOException e) {
+                }
+
+
+            }
+        });
+
+    }
+
+   /* public void sendJogo(jogoController jogo) throws IOException {
+
+        Thread sendMessage = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+
+                    dos.writeUTF(jogo.toString());
+
+                } catch (IOException e) {
+                }
+
+
+            }
+        });
+
+    }*/
+
+    public Jogador getJogador() {
+        return jogador;
+    }
+
+    public void setJogador(Jogador jogador) {
+        this.jogador = jogador;
+    }
 }

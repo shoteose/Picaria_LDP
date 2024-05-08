@@ -34,35 +34,8 @@ public class createPlayerController extends Main {
     private Stage stage;
     private Scene scene;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        Thread readMessage = new Thread(new Runnable() {
-            @Override
-            public void run() {
-
-                    try {
-                        String msg = dis.readUTF();
-                        if(msg != ""){
-
-                            Jogador a = new Jogador(msg);
-                            System.out.println(msg);
-                        }
-                        System.out.println(msg);
-                        System.out.println("nao era nada");
-                    } catch (IOException e) {
-                    }
-
-            }
-        });
-
-        readMessage.start();
-
-    }
     @FXML
     protected void criarJogador(ActionEvent e) throws IOException {
-
-
 
         try {
             ip= InetAddress.getByName(inputAdrr.getText());
@@ -88,7 +61,7 @@ public class createPlayerController extends Main {
         boolean existeUsername = Jogadores.contains(this.inputUsername.getText());
 
         // Existe esse jogadro, logo envia para o servidor o seu nome e suas wins
-        if(!existeUsername){
+      /*  if(!existeUsername){
 
             this.botaoCriarJogador.setDisable(true);
 
@@ -121,11 +94,11 @@ public class createPlayerController extends Main {
 
             sendMessage.start();
 
-           /* Parent root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
             stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
-            stage.show();*/
+            stage.show();
 
 
         }else{
@@ -133,23 +106,28 @@ public class createPlayerController extends Main {
             errorName.setFill(Color.RED);
             errorName.setText("Já existe esse username!");
 
-        }
+        }*/
 
         // Cria Jogador caso não exista e manda para o server o nome
-        if(!this.inputUsername.getText().isEmpty()) {
+       // if(!this.inputUsername.getText().isEmpty()) {
 
-            Jogador jogador = new Jogador(this.inputUsername.getText());
+            setJogador(new Jogador(this.inputUsername.getText()));
+            System.out.println("n:" + jogador.getNome());
             MainMenuController.Jogadores.add(jogador);
+
 
             Thread sendMessage = new Thread(new Runnable() {
                 @Override
                 public void run() {
 
-                        String msg = inputUsername.getText();
+                        String msg = "n:"+ inputUsername.getText();
+                        System.out.println(msg);
                         try {
+                            //dos.writeUTF("why god");
                             dos.writeUTF(msg);
 
                         } catch (IOException e) {
+                            e.printStackTrace();
                         }
 
 
@@ -165,10 +143,10 @@ public class createPlayerController extends Main {
             stage.show();*/
 
             
-        }else{
-            errorName.setFill(Color.RED);
-            errorName.setText("Nome nulo é inválido! Tente de Novo");
-        }
+       // }else{
+      //      errorName.setFill(Color.RED);
+      //      errorName.setText("Nome nulo é inválido! Tente de Novo");
+       // }
 
 
     }
