@@ -35,6 +35,22 @@ public class MainMenuController extends Main implements Initializable {
 
         ordenarHighScore();
 
+       /* Thread receberMessagem = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                    try {
+                        String msg = dis.readUTF();
+                        if(msg.startsWith("")){}
+                        System.out.println(msg);
+
+                    } catch (IOException e) {
+                    }
+
+            }
+        });
+
+        receberMessagem.start();*/
+
         for(Jogador qwe: Jogadores){
             String listViewHighScore = qwe.getNome() + " : " + qwe.getCounterWins();
             this.highscore.getItems().add(listViewHighScore);

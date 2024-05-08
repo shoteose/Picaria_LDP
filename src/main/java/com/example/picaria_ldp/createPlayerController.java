@@ -112,7 +112,7 @@ public class createPlayerController extends Main {
        // if(!this.inputUsername.getText().isEmpty()) {
 
             setJogador(new Jogador(this.inputUsername.getText()));
-            System.out.println("n:" + jogador.getNome());
+           // System.out.println("n:" + jogador.getNome());
             MainMenuController.Jogadores.add(jogador);
 
 
