@@ -40,6 +40,7 @@ public class Main {
                 try {
 
                     dos.writeUTF(msg);
+                    dos.flush();
 
                 } catch (IOException e) {
                 }
@@ -74,5 +75,21 @@ public class Main {
 
     public void setJogador(Jogador jogador) {
         this.jogador = jogador;
+    }
+
+    public static DataInputStream getDis() {
+        return dis;
+    }
+
+    public static void setDis(DataInputStream dis) {
+        Main.dis = dis;
+    }
+
+    public static DataOutputStream getDos() {
+        return dos;
+    }
+
+    public static void setDos(DataOutputStream dos) {
+        Main.dos = dos;
     }
 }

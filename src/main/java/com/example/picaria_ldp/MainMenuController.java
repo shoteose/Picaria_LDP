@@ -33,6 +33,12 @@ public class MainMenuController extends Main implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        for(Jogador qwe: Jogadores){
+            String listViewHighScore = qwe.getNome() + " : " + qwe.getCounterWins();
+            this.highscore.getItems().add(listViewHighScore);
+
+        }
+
         ordenarHighScore();
 
        /* Thread receberMessagem = new Thread(new Runnable() {
@@ -51,11 +57,7 @@ public class MainMenuController extends Main implements Initializable {
 
         receberMessagem.start();*/
 
-        for(Jogador qwe: Jogadores){
-            String listViewHighScore = qwe.getNome() + " : " + qwe.getCounterWins();
-            this.highscore.getItems().add(listViewHighScore);
 
-        }
 
     }
 

@@ -52,8 +52,8 @@ public class createPlayerController extends Main {
 
         }
 
-        dos = new DataOutputStream(s.getOutputStream());
-        dis = new DataInputStream(s.getInputStream());
+        setDos(new DataOutputStream(s.getOutputStream()));
+        setDis(new DataInputStream(s.getInputStream()));
 
 
 
@@ -112,19 +112,22 @@ public class createPlayerController extends Main {
        // if(!this.inputUsername.getText().isEmpty()) {
 
             setJogador(new Jogador(this.inputUsername.getText()));
-           // System.out.println("n:" + jogador.getNome());
-            MainMenuController.Jogadores.add(jogador);
+
+            Jogadores.add(jogador);
 
 
             Thread sendMessage = new Thread(new Runnable() {
                 @Override
                 public void run() {
 
-                        String msg = "n:"+ inputUsername.getText();
-                        System.out.println(msg);
+                        String msg = "nome:"+ inputUsername.getText();
+
                         try {
-                            //dos.writeUTF("why god");
+
+
+                            dos.writeUTF("why god");
                             dos.writeUTF(msg);
+                            dos.flush();
 
                         } catch (IOException e) {
                             e.printStackTrace();
@@ -148,6 +151,12 @@ public class createPlayerController extends Main {
       //      errorName.setText("Nome nulo é inválido! Tente de Novo");
        // }
 
+
+        Parent root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
+        stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
 
     }
 

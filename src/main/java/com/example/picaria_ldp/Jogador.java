@@ -2,9 +2,11 @@ package com.example.picaria_ldp;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.Serializable;
 import java.net.Socket;
 
-public class Jogador {
+public class Jogador implements Serializable {
+
 
     private String name;
     private DataInputStream dis;
