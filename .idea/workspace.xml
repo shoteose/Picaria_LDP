@@ -6,10 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8088fce2-160f-4e4d-b564-0b7294f0c881" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Jogador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Jogador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/MainMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/createPlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/createPlayerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/esperaJogoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/esperaJogoController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,6 +134,12 @@
       <workItem from="1715031651160" duration="152000" />
       <workItem from="1715102837657" duration="4992000" />
       <workItem from="1715160120347" duration="7592000" />
+      <workItem from="1715244468316" duration="175000" />
+      <workItem from="1715248210853" duration="3757000" />
+      <workItem from="1715253437876" duration="18000" />
+      <workItem from="1715254326449" duration="2111000" />
+      <workItem from="1715266774635" duration="950000" />
+      <workItem from="1715681689323" duration="1277000" />
     </task>
     <servers />
   </component>

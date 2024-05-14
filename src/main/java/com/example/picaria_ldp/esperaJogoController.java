@@ -17,10 +17,26 @@ public class esperaJogoController extends Main implements Initializable {
 
     private Stage stage;
     private Scene scene;
-    private boolean temInimigo = false;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        Thread readMessage = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    try {
+
+                        System.out.println("aiai_________________");
+                        String resposta = dis.readUTF();
+                        System.out.println("Resposta do servidor: " + resposta);
+                    } catch (IOException e) {
+                    }
+                }
+            }
+        });
+
+        readMessage.start();
 
 
 

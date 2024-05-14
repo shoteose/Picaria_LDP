@@ -124,8 +124,6 @@ public class createPlayerController extends Main {
 
                         try {
 
-
-                            dos.writeUTF("why god");
                             dos.writeUTF(msg);
                             dos.flush();
 

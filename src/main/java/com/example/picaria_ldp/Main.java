@@ -11,6 +11,8 @@ public class Main {
     public static Socket s;
     public static int ServerPort;
     public InetAddress ip;
+    public static boolean temInimigo = false;
+
     public static LinkedList<Jogador> Jogadores= new LinkedList<Jogador>();
     public static DataInputStream dis;
     public static DataOutputStream dos;
