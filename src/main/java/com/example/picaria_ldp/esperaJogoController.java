@@ -27,10 +27,10 @@ public class esperaJogoController extends Main implements Initializable {
                 while (true) {
                     try {
 
-                        System.out.println("aiai_________________");
                         String resposta = dis.readUTF();
                         System.out.println("Resposta do servidor: " + resposta);
                     } catch (IOException e) {
+                        e.printStackTrace();
                     }
                 }
             }
