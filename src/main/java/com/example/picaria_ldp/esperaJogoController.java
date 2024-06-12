@@ -29,8 +29,11 @@ public class esperaJogoController extends Main implements Initializable {
     @FXML
     private Text textoInfo;
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        if(esperaJogo==false){
 
 
         Thread readMessage = new Thread(() -> {
@@ -88,6 +91,45 @@ public class esperaJogoController extends Main implements Initializable {
         });
 
         readMessage.start();
+        }else{
+
+            this.textoInfo.setText("A espera da jogada do oponente");
+            this.botaoSair.setVisible(false);
+            this.botaoJogar.setDisable(true);
+
+            Thread readMessage = new Thread(() -> {
+                while (true) {
+                    try {
+
+                        String resposta = dis.readUTF();
+
+                        if(SouPlayerUm == true){
+
+                            if(resposta.startsWith("P2")){
+
+                                System.out.println("Sou o Player 1 e o Player 2 acabou de jogar");
+
+                            }
+
+                        }else{
+
+                            if(resposta.startsWith("P1")){
+
+                                System.out.println("Sou o Player 2 e o Player 1 acabou de jogar");
+
+                            }
+                        }
+
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+
+            readMessage.start();
+
+        }
     }
 
     @FXML

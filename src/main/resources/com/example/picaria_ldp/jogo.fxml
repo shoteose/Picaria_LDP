@@ -111,6 +111,6 @@
             <Font name="Trebuchet MS" size="14.0" />
          </font>
       </Text>
-      <Button fx:id="butaoEndTurn" layoutX="490.0" layoutY="373.0" mnemonicParsing="false" text="Acabar Turno" />
+      <Button fx:id="fimT" layoutX="490.0" layoutY="373.0" mnemonicParsing="false" onAction="#fimTurno" text="Acabar Turno" />
   </children>
 </AnchorPane>

@@ -16,6 +16,8 @@ public class Main {
     public static int ServerPort;
     public InetAddress ip;
     public static boolean temInimigo = false;
+    public static boolean esperaJogo = false;
+
 
     public static boolean SouPlayerUm;
 

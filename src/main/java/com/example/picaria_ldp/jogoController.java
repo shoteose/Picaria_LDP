@@ -2,9 +2,14 @@ package com.example.picaria_ldp;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -15,7 +20,10 @@ import java.util.ResourceBundle;
 
 public class jogoController extends Main implements Initializable{
 
-    ArrayList<Button> Vuttons = new ArrayList<>();
+    private Stage stage;
+    private Scene scene;
+
+    ArrayList<Button> Vuttons = new ArrayList<Button>();
     private int playerTurn = 0;
     @FXML
     private Button Button1;
@@ -43,10 +51,14 @@ public class jogoController extends Main implements Initializable{
     private Button Button12;
     @FXML
     private Button Button13;
+    @FXML
+    private Button fimT;
     private int count = 0;
     private boolean podeJogar = true;
     @FXML
     private Text infoPecaUm;
+
+    private String Jogada;
 
 
     @FXML
@@ -68,6 +80,19 @@ public class jogoController extends Main implements Initializable{
                             infoPecaUm.setText("Peças do Jogador: "+ (3-count));
 
                             podeJogar = false;
+                            fimT.setDisable(false);
+
+                            for(Button c : Vuttons){
+
+                                if(Button == c){
+
+                                    Jogada= "P1:1:"+c.getId();
+                                    System.out.println(c.getId());
+
+                                }
+
+
+                            }
 
                         }
                     }
@@ -76,11 +101,66 @@ public class jogoController extends Main implements Initializable{
 
             }else{
 
+                Button Button = (Button)e.getSource();
+                Button.setOnMouseClicked((mouseEvent) -> {
+
+                    if(count <= 3){
+
+                        if(Button != Button7){
+
+                            setPlayerSymbol(Button);
+                            count++;
+                            infoPecaUm.setText("Peças do Jogador: "+ (3-count));
+
+                            podeJogar = false;
+
+                        }
+                    }
+
+                });
 
             }
 
         }
     }
+
+    public void fimTurno(ActionEvent event) throws IOException {
+
+        Thread sendMessage = new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+
+                try {
+
+                    dos.writeUTF(Jogada);
+                    dos.flush();
+                    System.out.println(dis);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+        });
+
+        sendMessage.start();
+
+        esperaJogo=true;
+
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("esperaJogo.fxml"));
+            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 
     public void vericarWin(){
 
@@ -135,7 +215,8 @@ public class jogoController extends Main implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-
+            esperaJogo = false;
+            fimT.setDisable(true);
             Vuttons.add(Button1);
             Vuttons.add(Button2);
             Vuttons.add(Button3);
