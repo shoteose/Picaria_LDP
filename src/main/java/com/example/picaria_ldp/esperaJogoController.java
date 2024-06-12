@@ -38,19 +38,16 @@ public class esperaJogoController extends Main implements Initializable {
                     if(resposta.startsWith("qs")){
 
                         String[] partes = resposta.split(":");
-                        System.out.println(partes[0]);
                         int vez = parseInt(partes[1]);
-                        if(vez == 1){
+                        if(vez == 0){
 
-                            System.out.println(partes[1]);
+                            System.out.println( "Entrou no if, apareceu o botão jogar" + partes[1]);
 
                             botaoJogar.setVisible(true);
-                            botaoSair.setText("fodace");
                             botaoSair.setVisible(false);
                         }
 
                     }
-                    System.out.println(resposta);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
