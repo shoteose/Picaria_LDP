@@ -1,5 +1,6 @@
 package com.example.picaria_ldp;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -30,8 +31,12 @@ public class esperaJogoController extends Main implements Initializable {
     private Text textoInfo;
 
 
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        textoInfo.setText("OLA");
 
         if (esperaJogo == false) {
 
@@ -39,7 +44,6 @@ public class esperaJogoController extends Main implements Initializable {
             Thread readMessage = new Thread(() -> {
                 while (true) {
                     try {
-                        boolean minhaVez = false;
                         String resposta = dis.readUTF();
 
                         if (resposta.startsWith("qs")) {
@@ -83,8 +87,9 @@ public class esperaJogoController extends Main implements Initializable {
 
         }
         else{
+            counterE++;
 
-            textoInfo.setText("Estás a espera de Jogar de novo");
+            textoInfo.setText("Estás a espera de Jogar de novo " + counterE);
 
             Thread readMessage = new Thread(() -> {
                 while (true) {
@@ -122,6 +127,9 @@ public class esperaJogoController extends Main implements Initializable {
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
+
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -21,6 +21,8 @@ public class Main {
 
     public static boolean SouPlayerUm;
 
+    public static int counterE = 0;
+
     public static ArrayList<String> historico = new ArrayList();
 
     public static LinkedList<Jogador> Jogadores= new LinkedList<Jogador>();
