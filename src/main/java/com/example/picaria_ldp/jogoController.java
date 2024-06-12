@@ -1,8 +1,10 @@
 package com.example.picaria_ldp;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -11,9 +13,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
-public class jogoController extends Main {
+public class jogoController extends Main implements Initializable{
 
-    ArrayList<Button> Botoes;
+    ArrayList<Button> Vuttons = new ArrayList<>();
     private int playerTurn = 0;
     @FXML
     private Button Button1;
@@ -43,9 +45,42 @@ public class jogoController extends Main {
     private Button Button13;
     private int count = 0;
     private boolean podeJogar = true;
+    @FXML
+    private Text infoPecaUm;
 
 
+    @FXML
+    public void jogo(ActionEvent e){
 
+        if(podeJogar){
+
+            if(SouPlayerUm == true){
+
+                Button Button = (Button)e.getSource();
+                Button.setOnMouseClicked((mouseEvent) -> {
+
+                    if(count <= 3){
+
+                        if(Button != Button7){
+
+                            setPlayerSymbol(Button);
+                            count++;
+                            infoPecaUm.setText("Peças do Jogador: "+ (3-count));
+
+                            podeJogar = false;
+
+                        }
+                    }
+
+                });
+
+            }else{
+
+
+            }
+
+        }
+    }
 
     public void vericarWin(){
 
@@ -88,6 +123,33 @@ public class jogoController extends Main {
         }
     }
 
+    public void setPlayerSymbol(Button Button) {
+        if (SouPlayerUm) {
+            Button.setText("X");
+        } else {
+            Button.setText("O");
+        }
+
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
 
 
+            Vuttons.add(Button1);
+            Vuttons.add(Button2);
+            Vuttons.add(Button3);
+            Vuttons.add(Button4);
+            Vuttons.add(Button5);
+            Vuttons.add(Button6);
+            Vuttons.add(Button7);
+            Vuttons.add(Button8);
+            Vuttons.add(Button9);
+            Vuttons.add(Button10);
+            Vuttons.add(Button11);
+            Vuttons.add(Button12);
+            Vuttons.add(Button13);
+
+
+    }
 }

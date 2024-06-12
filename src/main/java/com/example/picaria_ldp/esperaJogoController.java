@@ -65,10 +65,18 @@ public class esperaJogoController extends Main implements Initializable {
                             do{
 
                                 String posso = dis.readUTF();
-                                
+                                if(posso.startsWith("P1")){
+
+                                    historico.add(posso);
+
+                                    String[] moves =posso.split(":");
 
 
-                            }while(minhaVez == true);
+                                }
+
+
+
+                            }while(minhaVez == false);
 
                         }
 

@@ -19,6 +19,8 @@ public class Main {
 
     public static boolean SouPlayerUm;
 
+    public static ArrayList<String> historico = new ArrayList();
+
     public static LinkedList<Jogador> Jogadores= new LinkedList<Jogador>();
     public static DataInputStream dis;
     public static DataOutputStream dos;
