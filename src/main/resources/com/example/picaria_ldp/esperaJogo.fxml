@@ -11,10 +11,11 @@
             <Font name="Trebuchet MS Bold" size="40.0" />
          </font>
       </Text>
-      <Button layoutX="266.0" layoutY="307.0" mnemonicParsing="false" onAction="#voltar" prefHeight="29.0" prefWidth="68.0" style="-fx-border-color: black; -fx-font-weight: bold; -fx-background-color: red;" text="Cancelar" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="botaoSair" layoutX="266.0" layoutY="307.0" mnemonicParsing="false" onAction="#voltar" prefHeight="29.0" prefWidth="68.0" style="-fx-border-color: black; -fx-font-weight: bold; -fx-background-color: red;" text="Cancelar" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Trebuchet MS" size="12.0" />
          </font>
       </Button>
+      <Button fx:id="botaoJogar" focusTraversable="false" layoutX="266.0" layoutY="268.0" mnemonicParsing="false" onAction="#jogar" prefHeight="29.0" prefWidth="68.0" text="Jogar" visible="false" AnchorPane.leftAnchor="266.0" AnchorPane.topAnchor="268.0" />
    </children>
 </AnchorPane>

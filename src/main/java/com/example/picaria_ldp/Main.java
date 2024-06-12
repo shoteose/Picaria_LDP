@@ -1,5 +1,7 @@
 package com.example.picaria_ldp;
 
+import javafx.stage.Stage;
+
 import java.io.*;
 import java.net.*;
 import java.util.*;
@@ -9,6 +11,8 @@ public class Main {
 
     public static Game game = new Game();
     public static Socket s;
+
+    public static Stage stagee;
     public static int ServerPort;
     public InetAddress ip;
     public static boolean temInimigo = false;

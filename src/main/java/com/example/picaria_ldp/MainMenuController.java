@@ -2,6 +2,8 @@ package com.example.picaria_ldp;
 
 import java.io.IOException;
 import java.util.*;
+
+import com.almasb.fxgl.app.services.SystemBundleService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -73,6 +75,7 @@ public class MainMenuController extends Main implements Initializable {
 
                     dos.writeUTF(msg);
                     dos.flush();
+                    System.out.println(dis);
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -89,6 +92,10 @@ public class MainMenuController extends Main implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
+
+        stagee=stage;
+        System.out.println(stage + "\n" + stagee);
     }
 
 
