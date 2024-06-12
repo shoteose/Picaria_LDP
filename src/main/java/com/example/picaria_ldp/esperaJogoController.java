@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -25,6 +26,8 @@ public class esperaJogoController extends Main implements Initializable {
     private Button botaoJogar;
     @FXML
     private Button botaoSair;
+    @FXML
+    private Text textoInfo;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -43,8 +46,17 @@ public class esperaJogoController extends Main implements Initializable {
 
                             System.out.println( "Entrou no if, apareceu o botão jogar" + partes[1]);
 
+
+                            textoInfo.setText("Partida Encontrada, és o primeiro a Jogar");
                             botaoJogar.setVisible(true);
                             botaoSair.setVisible(false);
+                        }else{
+                            textoInfo.setText("Partida Encontrada, é a vez do oponente");
+                            
+                            botaoJogar.setDisable(true);
+                            botaoJogar.setVisible(true);
+                            botaoSair.setVisible(false);
+
                         }
 
                     }
