@@ -36,6 +36,7 @@ public class esperaJogoController extends Main implements Initializable {
         Thread readMessage = new Thread(() -> {
             while (true) {
                 try {
+                    boolean minhaVez = false;
                     String resposta = dis.readUTF();
 
                     if(resposta.startsWith("qs")){
@@ -45,17 +46,29 @@ public class esperaJogoController extends Main implements Initializable {
                         if(vez == 0){
 
                             System.out.println( "Entrou no if, apareceu o botão jogar" + partes[1]);
-
-
+                            System.out.println(SouPlayerUm);
+                            SouPlayerUm = true;
+                            System.out.println(SouPlayerUm);
                             textoInfo.setText("Partida Encontrada, és o primeiro a Jogar");
                             botaoJogar.setVisible(true);
                             botaoSair.setVisible(false);
                         }else{
+
+                            System.out.println(SouPlayerUm);
                             textoInfo.setText("Partida Encontrada, é a vez do oponente");
-                            
+                            SouPlayerUm =false;
+                            System.out.println(SouPlayerUm);
                             botaoJogar.setDisable(true);
                             botaoJogar.setVisible(true);
                             botaoSair.setVisible(false);
+
+                            do{
+
+                                String posso = dis.readUTF();
+                                
+
+
+                            }while(minhaVez == true);
 
                         }
 
