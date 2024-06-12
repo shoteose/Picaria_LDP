@@ -36,8 +36,8 @@ public class esperaJogoController extends Main implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        textoInfo.setText("OLA");
-
+        System.out.println("Estou a espera de jogar? "+ esperaJogo);
+        System.out.println("Sou player Um? "+ SouPlayerUm);
         if (esperaJogo == false) {
 
 
@@ -74,9 +74,11 @@ public class esperaJogoController extends Main implements Initializable {
                         }
 
                         if(resposta.startsWith("P1")){
-                            textoInfo.setText("Jogaste");
+
+                            textoInfo.setText(resposta);
 
                         }
+
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -91,28 +93,49 @@ public class esperaJogoController extends Main implements Initializable {
 
             textoInfo.setText("Estás a espera de Jogar de novo " + counterE);
 
-            Thread readMessage = new Thread(() -> {
-                while (true) {
-                    try {
+            if(SouPlayerUm==true){
 
-                        String resposta = dis.readUTF();
+                Thread readMessage = new Thread(() -> {
+                    while (true) {
+                        try {
 
-                        if(resposta.startsWith("P1")){
-                            textoInfo.setText("P1 jogou");
+                            System.out.println("Estou dentro do readMessage e sou Player 1 e Estou a espera");
+                            String resposta = dis.readUTF();
 
+                            if(resposta.startsWith("P2")){
+                                textoInfo.setText("P2 jogou");
+
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
                         }
-
-                        if(resposta.startsWith("P2")){
-                            textoInfo.setText("P2 jogou");
-
-                        }
-                    } catch (IOException e) {
-                        e.printStackTrace();
                     }
-                }
-            });
+                });
 
-            readMessage.start();
+                readMessage.start();
+
+            }else{
+
+                Thread readMessage = new Thread(() -> {
+                    while (true) {
+                        try {
+
+                            String resposta = dis.readUTF();
+
+                            if(resposta.startsWith("P1")){
+                                textoInfo.setText("P1 jogou");
+
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+
+                readMessage.start();
+
+            }
+
 
 
         }
@@ -122,15 +145,59 @@ public class esperaJogoController extends Main implements Initializable {
     protected void voltar(ActionEvent event) throws IOException {
        try {
 
-            Parent root = FXMLLoader.load(getClass().getResource("esperaJogo.fxml"));
+            /*Parent root = FXMLLoader.load(getClass().getResource("esperaJogo.fxml"));
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
-            stage.show();
+            stage.show();*/
+           if(SouPlayerUm==true){
+
+               Thread readMessage = new Thread(() -> {
+                   while (true) {
+                       try {
+
+                           System.out.println("Estou dentro do readMessage e sou Player 1 e Estou a espera");
+                           String resposta = dis.readUTF();
+
+                           if(resposta.startsWith("P2")){
+                               textoInfo.setText("P2 jogou");
+
+                           }
+                       } catch (IOException e) {
+                           e.printStackTrace();
+                       }
+                   }
+               });
+
+               readMessage.start();
+
+           }else{
+
+               Thread readMessage = new Thread(() -> {
+                   while (true) {
+                       try {
+
+                           String resposta = dis.readUTF();
+
+                           if(resposta.startsWith("P1")){
+                               textoInfo.setText("P1 jogou");
+
+                           }
+                       } catch (IOException e) {
+                           e.printStackTrace();
+                       }
+                   }
+               });
+
+               readMessage.start();
+
+           }
 
 
 
-        } catch (IOException e) {
+
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
