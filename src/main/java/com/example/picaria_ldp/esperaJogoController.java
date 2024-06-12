@@ -67,15 +67,24 @@ public class esperaJogoController extends Main implements Initializable {
 
                             do{
 
-                                String posso = dis.readUTF();
-                                if(posso.startsWith("P1")){
+                                Thread readMessage2 = new Thread(() -> {
+                                    while (true) {
+                                        try {
 
-                                    historico.add(posso);
+                                            String resposta2 = dis.readUTF();
 
-                                    String[] moves =posso.split(":");
+                                            if (resposta2.startsWith("P1")) {
+                                                this.botaoJogar.setVisible(true);
+                                                this.botaoSair.setDisable(false);
+                                            }
 
+                                        } catch (IOException e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
+                                });
 
-                                }
+                                readMessage2.start();
 
 
 
