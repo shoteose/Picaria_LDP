@@ -158,11 +158,10 @@ public class jogoController extends Main implements Initializable{
         sendMessage.start();
 */
 
-        esperaJogo=true;
 
         Platform.runLater(() -> {
 
-            textoGrande.setText("A espera da Jogada do Adversário");
+            textoGrande.setText("A espera da Jogada do Oponente");
 
         });
 
@@ -191,6 +190,23 @@ public class jogoController extends Main implements Initializable{
 
                     esperaJogo=false;
                     textoGrande.setText(mensagem);
+
+                    String[] partes = mensagem.split(":");
+                    int parteJogo = parseInt(partes[1]);
+                    if (parteJogo == 1) {
+
+                        String botaoClicado=partes[2];
+
+                        for (Button b:Vuttons){
+                            if(b.getId()==botaoClicado){
+                                setAdvSymbol(b);
+
+                                podeJogar = true;
+                                fimT.setDisable(false);
+                            }
+                        }
+                         podeJogar = true;
+                    }
 
                 }
 
@@ -239,6 +255,16 @@ public class jogoController extends Main implements Initializable{
 
     public void setPlayerSymbol(Button Button) {
         if (SouPlayerUm) {
+            Button.setText("X");
+        } else {
+            Button.setText("O");
+        }
+
+    }
+
+    public void setAdvSymbol(Button Button) {
+
+        if (!SouPlayerUm) {
             Button.setText("X");
         } else {
             Button.setText("O");
