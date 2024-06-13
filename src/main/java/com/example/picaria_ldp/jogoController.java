@@ -152,9 +152,21 @@ public class jogoController extends Main implements Initializable{
 
     public void fimTurno(ActionEvent event) throws IOException {
 
+        vericarWin();
+
 
         if(!Objects.equals(Jogada, "")){
-            cliente.enviarMensagem(Jogada);
+            if(!Objects.equals(Jogada,cliente.mensagensR.getLast())){
+
+                cliente.enviarMensagem(Jogada);
+
+                Platform.runLater(() -> {
+
+                    textoGrande.setText("A espera da Jogada do Oponente");
+
+                });
+
+            }
         }
 
         /*
@@ -179,13 +191,6 @@ public class jogoController extends Main implements Initializable{
 
         sendMessage.start();
 */
-
-
-        Platform.runLater(() -> {
-
-            textoGrande.setText("A espera da Jogada do Oponente");
-
-        });
 
     }
 
@@ -281,12 +286,20 @@ public class jogoController extends Main implements Initializable{
                 this.podeJogar = false;
                 this.count = 0;
 
-                cliente.enviarMensagem("Ganhei");
+                cliente.enviarMensagem("G1");
+
+                    textoGrande.setText("Ganhaste!! :)");
+
 
             } else if (linha.equals("OOO")) {
 
                 this.podeJogar = false;
                 this.count = 0;
+
+
+                    textoGrande.setText("Perdeste!! :(");
+
+                cliente.enviarMensagem("G2");
             }
         }
     }
