@@ -171,18 +171,28 @@ public class jogoController extends Main implements Initializable{
     private void processarMensagem(String mensagem) {
 
 
+
         Platform.runLater(() -> {
 
             System.out.println("Estou na funca de processar.");
-            if (mensagem.startsWith("P1")) {
 
-                esperaJogo=false;
+            if(SouPlayerUm){
 
-            }
+                if (mensagem.startsWith("P2")) {
 
-            if (mensagem.startsWith("P2")) {
+                    esperaJogo=false;
+                    textoGrande.setText(mensagem);
 
-                esperaJogo=false;
+                }
+
+            }else{
+
+                if (mensagem.startsWith("P1")) {
+
+                    esperaJogo=false;
+                    textoGrande.setText(mensagem);
+
+                }
 
             }
 
@@ -244,10 +254,10 @@ public class jogoController extends Main implements Initializable{
         });
 
             if(SouPlayerUm){
-                esperaJogo=false;
+                podeJogar=true;
             }else{
                 textoGrande.setText("A espera da jogada do Oponente");
-                esperaJogo=true;
+                podeJogar=false;
             }
             fimT.setDisable(true);
             Vuttons.add(Button1);
