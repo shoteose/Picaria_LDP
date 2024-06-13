@@ -23,12 +23,14 @@ public class Cliente {
         dis = new DataInputStream(s.getInputStream());
         dos = new DataOutputStream(s.getOutputStream());
 
+        System.out.println("Cliente inicializado com sucesso.");
 
         Thread lerMensagem = new Thread(() -> {
             try {
                 while (true) {
                     String mensagem = dis.readUTF();
                     notificarOuvintes(mensagem);
+                    System.out.println("ouvi: " + mensagem);
                     mensagensR.add(mensagem);
                 }
             } catch (IOException e) {
@@ -50,11 +52,13 @@ public class Cliente {
 
     public void adicionarOuvinte(OuvinteMensagem ouvinte) {
         ouvintes.add(ouvinte);
+        System.out.println("Ouvinte adicionado: " + ouvinte); // Diagnóstico
     }
 
     private void notificarOuvintes(String mensagem) {
         for (OuvinteMensagem ouvinte : ouvintes) {
             ouvinte.mensagemRecebida(mensagem);
+            System.out.println("Ouvinte adicionado: " + ouvinte); // Diagnóstico
         }
     }
 

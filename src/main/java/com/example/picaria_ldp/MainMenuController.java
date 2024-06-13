@@ -87,7 +87,7 @@ public class MainMenuController extends Main implements Initializable {
 
         sendMessage.start();*/
 
-        cliente.enviarMensagem("qs");
+        //cliente.enviarMensagem("qs");
 
         Parent root = FXMLLoader.load(getClass().getResource("esperaJogo.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();

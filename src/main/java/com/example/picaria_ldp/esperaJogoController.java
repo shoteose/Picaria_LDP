@@ -36,18 +36,23 @@ public class esperaJogoController extends Main implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+
+        cliente.enviarMensagem("qs");
+
         System.out.println("Estou a espera de jogar? " + esperaJogo);
         System.out.println("Sou player Um? " + SouPlayerUm);
 
-        System.out.println(cliente.mensagensR);
+
 
         cliente.adicionarOuvinte(mensagem -> {
-            javafx.application.Platform.runLater(() -> processarMensagem(mensagem));
+
+            Platform.runLater(() -> processarMensagem(mensagem));
+
         });
 
-        //String lastMensagem= cliente.mensagensR.getLast();
+       /* String lastMensagem= cliente.mensagensR.getLast();
 
-        //processarMensagem(lastMensagem);
+        processarMensagem(lastMensagem);*/
 
 
 
@@ -78,7 +83,7 @@ public class esperaJogoController extends Main implements Initializable {
                 System.out.println(mensagem + " processamento de mensagem");
                 String[] partes = mensagem.split(":");
                 int vez = parseInt(partes[1]);
-                if (vez == 0) {
+                if (vez %2 == 0) {
                     System.out.println("Entrou no if, apareceu o botão jogar " + partes[1]);
                     SouPlayerUm = true;
                     textoInfo.setText("Partida Encontrada, és o primeiro a Jogar");
