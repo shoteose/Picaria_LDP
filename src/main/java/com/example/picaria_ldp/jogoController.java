@@ -17,6 +17,7 @@ import java.io.Serializable;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 import static java.lang.Integer.parseInt;
@@ -182,25 +183,7 @@ public class jogoController extends Main implements Initializable{
                     esperaJogo=false;
                     textoGrande.setText(mensagem);
 
-                    String[] partes = mensagem.split(":");
-                    int parteJogo = parseInt(partes[1]);
-                    if (parteJogo == 1) {
-
-                        System.out.println(partes[1] + " 2 -->" + partes[2]);
-                        String botaoClicado=partes[2];
-
-                        for (Button b:Vuttons){
-                            if(b.getId()==botaoClicado){
-
-                                System.out.println(b.getId() + botaoClicado);
-                                setAdvSymbol(b);
-
-                                podeJogar = true;
-                                fimT.setDisable(false);
-                            }
-                        }
-                        podeJogar = true;
-                    }
+                    agiliza(mensagem);
 
                 }
 
@@ -235,6 +218,34 @@ public class jogoController extends Main implements Initializable{
 
             }
 
+        });
+    }
+
+    private void agiliza(String mensagem){
+
+        Platform.runLater(() -> {
+
+        String[] partes = mensagem.split(":");
+        int parteJogo = parseInt(partes[1]);
+        if (parteJogo == 1) {
+
+            System.out.println(partes[1] + " 2 -->" + partes[2]);
+
+            String botaoClicado=partes[2];
+
+            for (Button b:Vuttons){
+                if(Objects.equals(b.getId(), botaoClicado)){
+
+                    System.out.println(b.getId() + botaoClicado);
+                    setAdvSymbol(b);
+
+                    podeJogar = true;
+                    fimT.setDisable(false);
+                }
+            }
+            podeJogar = true;
+        }
+        
         });
     }
 
