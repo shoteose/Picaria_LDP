@@ -36,120 +36,80 @@ public class esperaJogoController extends Main implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        System.out.println("Estou a espera de jogar? "+ esperaJogo);
-        System.out.println("Sou player Um? "+ SouPlayerUm);
-        if (esperaJogo == false) {
+        System.out.println("Estou a espera de jogar? " + esperaJogo);
+        System.out.println("Sou player Um? " + SouPlayerUm);
+
+        System.out.println(cliente.mensagensR);
+
+        cliente.adicionarOuvinte(mensagem -> {
+            javafx.application.Platform.runLater(() -> processarMensagem(mensagem));
+        });
+
+        //String lastMensagem= cliente.mensagensR.getLast();
+
+        //processarMensagem(lastMensagem);
 
 
-            Thread readMessage = new Thread(() -> {
-                while (true) {
-                    try {
-                        String resposta = dis.readUTF();
 
-                        if (resposta.startsWith("qs")) {
-
-                            String[] partes = resposta.split(":");
-                            int vez = parseInt(partes[1]);
-                            if (vez == 0) {
-
-                                System.out.println("Entrou no if, apareceu o botão jogar " + partes[1]);
-                                SouPlayerUm = true;
-                                textoInfo.setText("Partida Encontrada, és o primeiro a Jogar");
-                                botaoJogar.setVisible(true);
-                                botaoSair.setVisible(false);
-                            } else {
-
-                                System.out.println(SouPlayerUm);
-                                textoInfo.setText("Partida Encontrada, é a vez do oponente");
-                                SouPlayerUm = false;
-                                System.out.println(SouPlayerUm);
-                                botaoJogar.setDisable(true);
-                                botaoJogar.setVisible(false);
-                                botaoSair.setVisible(true);
-                                botaoSair.setDisable(false);
-
-
-                            }
-
-                        }
-
-                        if(resposta.startsWith("P1")){
-
-                            textoInfo.setText(resposta);
-
-                        }
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
-
-            readMessage.start();
-
-        }
-        else{
+       /* if (!esperaJogo) {
+            // Se não está à espera, configura a interface para uma nova partida
+            textoInfo.setText("Preparando para a nova partida...");
+        } else {
             counterE++;
-
             textoInfo.setText("Estás a espera de Jogar de novo " + counterE);
 
-            if(SouPlayerUm==true){
+            if (SouPlayerUm) {
+                textoInfo.setText("Aguardando a jogada do adversário...");
+            } else {
+                textoInfo.setText("É sua vez de jogar...");
+            }
+        }*/
 
-                Thread readMessage = new Thread(() -> {
-                    while (true) {
-                        try {
+    }
 
-                            System.out.println("Estou dentro do readMessage e sou Player 1 e Estou a espera");
-                            String resposta = dis.readUTF();
+    private void processarMensagem(String mensagem) {
 
-                            if(resposta.startsWith("P2")){
-                                textoInfo.setText("P2 jogou");
 
-                            }
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                });
+        Platform.runLater(() -> {
 
-                readMessage.start();
+            System.out.println("Estou na funca de processar.");
+            if (mensagem.startsWith("qs")) {
 
-            }else{
-
-                Thread readMessage = new Thread(() -> {
-                    while (true) {
-                        try {
-
-                            String resposta = dis.readUTF();
-
-                            if(resposta.startsWith("P1")){
-                                textoInfo.setText("P1 jogou");
-
-                            }
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                });
-
-                readMessage.start();
-
+                System.out.println(mensagem + " processamento de mensagem");
+                String[] partes = mensagem.split(":");
+                int vez = parseInt(partes[1]);
+                if (vez == 0) {
+                    System.out.println("Entrou no if, apareceu o botão jogar " + partes[1]);
+                    SouPlayerUm = true;
+                    textoInfo.setText("Partida Encontrada, és o primeiro a Jogar");
+                    botaoJogar.setVisible(true);
+                    botaoSair.setVisible(false);
+                } else {
+                    System.out.println(SouPlayerUm);
+                    textoInfo.setText("Partida Encontrada, é a vez do oponente");
+                    SouPlayerUm = false;
+                    System.out.println(SouPlayerUm);
+                    botaoJogar.setDisable(true);
+                    botaoJogar.setVisible(false);
+                    botaoSair.setVisible(true);
+                    botaoSair.setDisable(false);
+                }
             }
 
-
-
-        }
+        });
     }
 
     @FXML
     protected void voltar(ActionEvent event) throws IOException {
-       try {
+
+        /*
+        try {
 
             /*Parent root = FXMLLoader.load(getClass().getResource("esperaJogo.fxml"));
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
-            stage.show();*/
+            stage.show();
            if(SouPlayerUm==true){
 
                Thread readMessage = new Thread(() -> {
@@ -200,7 +160,7 @@ public class esperaJogoController extends Main implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+*/
 
     }
 

@@ -6,6 +6,8 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 
+import static java.lang.Integer.parseInt;
+
 
 public class Main {
 
@@ -26,8 +28,10 @@ public class Main {
     public static ArrayList<String> historico = new ArrayList();
 
     public static LinkedList<Jogador> Jogadores= new LinkedList<Jogador>();
-    public static DataInputStream dis;
-    public static DataOutputStream dos;
+    //public static DataInputStream dis;
+    //public static DataOutputStream dos;
+
+    public static Cliente cliente;
 
     public Jogador jogador;
     public static void main(String[] args) throws UnknownHostException, IOException {
@@ -46,7 +50,7 @@ public class Main {
 
     }
 
-    public void sendMessageServer(String msg) throws IOException {
+    /*public void sendMessageServer(String msg) throws IOException {
 
         Thread sendMessage = new Thread(new Runnable() {
             @Override
@@ -63,47 +67,11 @@ public class Main {
             }
         });
 
-    }
-
-   /* public void sendJogo(jogoController jogo) throws IOException {
-
-        Thread sendMessage = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-
-                    dos.writeUTF(jogo.toString());
-
-                } catch (IOException e) {
-                }
-
-
-            }
-        });
-
     }*/
-
-    public Jogador getJogador() {
-        return jogador;
-    }
 
     public void setJogador(Jogador jogador) {
         this.jogador = jogador;
     }
 
-    public static DataInputStream getDis() {
-        return dis;
-    }
 
-    public static void setDis(DataInputStream dis) {
-        Main.dis = dis;
-    }
-
-    public static DataOutputStream getDos() {
-        return dos;
-    }
-
-    public static void setDos(DataOutputStream dos) {
-        Main.dos = dos;
-    }
 }

@@ -1,5 +1,6 @@
 package com.example.picaria_ldp;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +18,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.ResourceBundle;
+
+import static java.lang.Integer.parseInt;
 
 public class jogoController extends Main implements Initializable{
 
@@ -53,6 +56,9 @@ public class jogoController extends Main implements Initializable{
     private Button Button13;
     @FXML
     private Button fimT;
+
+    @FXML
+    private Text textoGrande;
     private int count = 0;
     private boolean podeJogar = true;
     @FXML
@@ -126,6 +132,10 @@ public class jogoController extends Main implements Initializable{
 
     public void fimTurno(ActionEvent event) throws IOException {
 
+
+        cliente.enviarMensagem(Jogada);
+
+        /*
         Thread sendMessage = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -146,21 +156,39 @@ public class jogoController extends Main implements Initializable{
         });
 
         sendMessage.start();
+*/
 
         esperaJogo=true;
 
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("esperaJogo.fxml"));
-            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Platform.runLater(() -> {
+
+            textoGrande.setText("A espera da Jogada do Adversário");
+
+        });
 
     }
 
+
+    private void processarMensagem(String mensagem) {
+
+
+        Platform.runLater(() -> {
+
+            System.out.println("Estou na funca de processar.");
+            if (mensagem.startsWith("P1")) {
+
+                esperaJogo=false;
+
+            }
+
+            if (mensagem.startsWith("P2")) {
+
+                esperaJogo=false;
+
+            }
+
+        });
+    }
 
     public void vericarWin(){
 
@@ -190,11 +218,8 @@ public class jogoController extends Main implements Initializable{
                 this.podeJogar = false;
                 this.count = 0;
 
-                try {
-                    sendMessageServer(jogador.getNome() + " ganhou!");
-                } catch (IOException e) {
+                cliente.enviarMensagem("Ganhei");
 
-                }
             } else if (linha.equals("OOO")) {
 
                 this.podeJogar = false;
@@ -215,7 +240,15 @@ public class jogoController extends Main implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-            esperaJogo = false;
+        cliente.adicionarOuvinte(mensagem -> {
+            javafx.application.Platform.runLater(() -> processarMensagem(mensagem));
+        });
+
+            if(SouPlayerUm){
+                esperaJogo=false;
+            }else{
+                esperaJogo=true;
+            }
             fimT.setDisable(true);
             Vuttons.add(Button1);
             Vuttons.add(Button2);

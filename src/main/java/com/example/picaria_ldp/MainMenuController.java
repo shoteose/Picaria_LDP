@@ -65,7 +65,7 @@ public class MainMenuController extends Main implements Initializable {
 
     @FXML protected void goPlay(ActionEvent event) throws IOException {
 
-        Thread sendMessage = new Thread(new Runnable() {
+       /* Thread sendMessage = new Thread(new Runnable() {
             @Override
             public void run() {
 
@@ -85,7 +85,9 @@ public class MainMenuController extends Main implements Initializable {
             }
         });
 
-        sendMessage.start();
+        sendMessage.start();*/
+
+        cliente.enviarMensagem("qs");
 
         Parent root = FXMLLoader.load(getClass().getResource("esperaJogo.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -95,7 +97,7 @@ public class MainMenuController extends Main implements Initializable {
 
 
         stagee=stage;
-        System.out.println(stage + "\n" + stagee);
+
     }
 
 
@@ -110,7 +112,7 @@ public class MainMenuController extends Main implements Initializable {
     @FXML
     protected void fechar(ActionEvent event) throws IOException {
 
-        sendMessageServer("logout");
+        cliente.enviarMensagem("logout");
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stage.close();
 

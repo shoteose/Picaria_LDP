@@ -5,7 +5,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="421.8" prefWidth="600.0" style="-fx-background-color: lightgreen;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.picaria_ldp.jogoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="421.8" prefWidth="600.0" style="-fx-background-color: lightgreen;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.picaria_ldp.jogoController">
   <children>
       <Line endX="424.0" endY="235.39646911621094" startX="173.79290771484375" startY="233.75" strokeWidth="2.0" />
       <Line endX="423.5" endY="356.29290771484375" startX="423.5" startY="114.5" strokeWidth="2.0" />
@@ -102,7 +102,8 @@
             </Button>
     </children>
   </GridPane>
-      <Text layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vez do &quot;Jogador&quot;" textAlignment="CENTER" wrappingWidth="600.0">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fx:id="textoGrande" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vez do &quot;Jogador&quot;" textAlignment="CENTER" wrappingWidth="600.0">
          <font>
             <Font name="Trebuchet MS" size="40.0" />
          </font></Text>
