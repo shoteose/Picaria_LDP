@@ -94,12 +94,15 @@ public class esperaJogoController extends Main implements Initializable {
                     textoInfo.setText("Partida Encontrada, é a vez do oponente");
                     SouPlayerUm = false;
                     System.out.println(SouPlayerUm);
-                    botaoJogar.setDisable(true);
+                    /*botaoJogar.setDisable(true);
                     botaoJogar.setVisible(false);
                     botaoSair.setVisible(true);
-                    botaoSair.setDisable(false);
+                    botaoSair.setDisable(false);*/
+                    botaoJogar.setVisible(true);
+                    botaoSair.setVisible(false);
                 }
             }
+
 
         });
     }

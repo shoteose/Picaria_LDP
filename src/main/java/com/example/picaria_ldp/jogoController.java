@@ -168,7 +168,6 @@ public class jogoController extends Main implements Initializable{
 
     }
 
-
     private void processarMensagem(String mensagem) {
 
 
@@ -247,6 +246,7 @@ public class jogoController extends Main implements Initializable{
             if(SouPlayerUm){
                 esperaJogo=false;
             }else{
+                textoGrande.setText("A espera da jogada do Oponente");
                 esperaJogo=true;
             }
             fimT.setDisable(true);

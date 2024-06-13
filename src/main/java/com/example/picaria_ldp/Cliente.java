@@ -52,13 +52,13 @@ public class Cliente {
 
     public void adicionarOuvinte(OuvinteMensagem ouvinte) {
         ouvintes.add(ouvinte);
-        System.out.println("Ouvinte adicionado: " + ouvinte); // Diagnóstico
+
     }
 
     private void notificarOuvintes(String mensagem) {
         for (OuvinteMensagem ouvinte : ouvintes) {
             ouvinte.mensagemRecebida(mensagem);
-            System.out.println("Ouvinte adicionado: " + ouvinte); // Diagnóstico
+
         }
     }
 
