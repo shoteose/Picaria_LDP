@@ -145,7 +145,7 @@
       <workItem from="1717596435728" duration="385000" />
       <workItem from="1718181006923" duration="18040000" />
       <workItem from="1718272499336" duration="7560000" />
-      <workItem from="1718313914170" duration="3375000" />
+      <workItem from="1718313914170" duration="3975000" />
     </task>
     <servers />
   </component>
@@ -165,5 +165,10 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Picaria_LDP$Main.ic" NAME="Main Coverage Results" MODIFIED="1718317574303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.picaria_ldp.*</FILTER>
+    </SUITE>
   </component>
 </project>
