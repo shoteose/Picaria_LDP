@@ -60,7 +60,7 @@ public class jogoController extends Main implements Initializable{
 
     @FXML
     private Text textoGrande;
-    private int count = 0;
+    private int count = 1;
     private boolean podeJogar = true;
     @FXML
     private Text infoPecaUm;
@@ -83,9 +83,10 @@ public class jogoController extends Main implements Initializable{
                         if(Button != Button7){
 
                             setPlayerSymbol(Button);
-                            count++;
+
                             infoPecaUm.setText("Peças do Jogador: "+ (3-count));
 
+                            count++;
                             podeJogar = false;
                             fimT.setDisable(false);
 
@@ -102,6 +103,9 @@ public class jogoController extends Main implements Initializable{
                             }
 
                         }
+                    }else{
+
+                        System.out.println("OPA NAO DEVIA DE DAR");
                     }
 
                 });
@@ -120,8 +124,23 @@ public class jogoController extends Main implements Initializable{
                             infoPecaUm.setText("Peças do Jogador: "+ (3-count));
 
                             podeJogar = false;
+                            fimT.setDisable(false);
 
+                            for(Button c : Vuttons){
+
+                                if(Button == c){
+
+                                    Jogada= "P2:1:"+c.getId();
+                                    System.out.println(c.getId());
+
+                                }
+
+
+                            }
                         }
+                    }else{
+
+                        System.out.println("OPA NAO DEVIA DE DAR");
                     }
 
                 });
@@ -134,7 +153,9 @@ public class jogoController extends Main implements Initializable{
     public void fimTurno(ActionEvent event) throws IOException {
 
 
-        cliente.enviarMensagem(Jogada);
+        if(!Objects.equals(Jogada, "")){
+            cliente.enviarMensagem(Jogada);
+        }
 
         /*
         Thread sendMessage = new Thread(new Runnable() {
@@ -194,25 +215,7 @@ public class jogoController extends Main implements Initializable{
                     esperaJogo=false;
                     textoGrande.setText(mensagem);
 
-                    String[] partes = mensagem.split(":");
-                    int parteJogo = parseInt(partes[1]);
-                    if (parteJogo == 1) {
-
-                        System.out.println(partes[1] + " 2 -->" + partes[2]);
-                        String botaoClicado=partes[2];
-
-                        for (Button b:Vuttons){
-                            if(b.getId()==botaoClicado){
-
-                                System.out.println(b.getId() + botaoClicado);
-                                setAdvSymbol(b);
-
-                                podeJogar = true;
-                                fimT.setDisable(false);
-                            }
-                        }
-                         podeJogar = true;
-                    }
+                    agiliza(mensagem);
 
                 }
 
@@ -234,6 +237,7 @@ public class jogoController extends Main implements Initializable{
             String botaoClicado=partes[2];
 
             for (Button b:Vuttons){
+
                 if(Objects.equals(b.getId(), botaoClicado)){
 
                     System.out.println(b.getId() + botaoClicado);
@@ -245,7 +249,7 @@ public class jogoController extends Main implements Initializable{
             }
             podeJogar = true;
         }
-        
+
         });
     }
 
