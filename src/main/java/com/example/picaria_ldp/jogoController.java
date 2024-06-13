@@ -287,18 +287,18 @@ public class jogoController extends Main implements Initializable{
                 this.count = 0;
 
                 cliente.enviarMensagem("G1");
-
+                Platform.runLater(() -> {
                     textoGrande.setText("Ganhaste!! :)");
-
+                });
 
             } else if (linha.equals("OOO")) {
 
                 this.podeJogar = false;
                 this.count = 0;
 
-
+                Platform.runLater(() -> {
                     textoGrande.setText("Perdeste!! :(");
-
+                });
                 cliente.enviarMensagem("G2");
             }
         }
