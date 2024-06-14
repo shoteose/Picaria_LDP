@@ -20,6 +20,14 @@ public class Cliente {
 
     private List<OuvinteMensagem> ouvintes = new ArrayList<>();
 
+    /**
+     * Construtor da classe Cliente. Começa a conexão com o servidor e inicia a thread para ouvir mensagens.
+     *
+     * @param nome  O nome do cliente.
+     * @param ip    O endereço IP do servidor.
+     * @param porta A porta do servidor.
+     * @throws IOException Caso exista algum erro ao conectar ao servidor
+     */
     public Cliente(String nome,InetAddress ip, int porta) throws IOException {
 
         this.nome=nome;
@@ -44,7 +52,11 @@ public class Cliente {
         });
         lerMensagem.start();
     }
-
+    /**
+     * Envia uma mensagem para o servidor.
+     *
+     * @param mensagem A mensagem a ser enviada.
+     */
     public void enviarMensagem(String mensagem) {
         try {
             dos.writeUTF(mensagem);
@@ -53,37 +65,55 @@ public class Cliente {
             e.printStackTrace();
         }
     }
-
-
+    /**
+     * Adiciona um ouvinte de mensagem à lista de ouvintes.
+     *
+     * @param ouvinte O ouvinte de mensagem a ser adicionado.
+     */
     public void adicionarOuvinte(OuvinteMensagem ouvinte) {
         ouvintes.add(ouvinte);
 
     }
-
+    /**
+     * Notifica todos os ouvintes sobre uma nova mensagem recebida.
+     *
+     * @param mensagem A mensagem recebida.
+     */
     private void notificarOuvintes(String mensagem) {
         for (OuvinteMensagem ouvinte : ouvintes) {
             ouvinte.mensagemRecebida(mensagem);
 
         }
     }
-
+    /**
+     * Interface para ouvintes de mensagem. Implementada para receber "notificações" de novas mensagens.
+     */
     public interface OuvinteMensagem {
         void mensagemRecebida(String mensagem);
     }
 
+    /**
+     * Getter do Nome
+     * @return retorna o nome
+     */
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    /**
+     * Aumenta as vitórias
+     */
+    public void ganhou() {
+        this.counterWins ++;
     }
 
+    /**
+     * Getter das Vitórias
+     * @return o número de vitórias
+     */
     public int getCounterWins() {
         return counterWins;
     }
 
-    public void setCounterWins(int counterWins) {
-        this.counterWins = counterWins;
-    }
+
 }

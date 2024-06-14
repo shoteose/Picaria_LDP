@@ -26,7 +26,7 @@ public class jogoController extends Main implements Initializable{
 
     private boolean ganhei;
     ArrayList<Button> Vuttons = new ArrayList<Button>();
-    private int playerTurn = 0;
+
     @FXML
     private Button Button1;
     @FXML
@@ -269,6 +269,11 @@ public class jogoController extends Main implements Initializable{
         }
     }
 
+    /**
+     * Este método é chamado no botao de fim de turno, serve para validar e enviar para o servidor a jogada
+     * @param event O ActionEvent é registado ao clicar no botao
+     * @throws IOException Caso exista algum erro ao carregar o FXML.
+     */
     public void fimTurno(ActionEvent event) throws IOException {
 
 
@@ -319,6 +324,10 @@ public class jogoController extends Main implements Initializable{
 
     }
 
+    /**
+     * Este método serve para processar a mensagem enviada pelo servidor
+     * @param mensagem é a mensagem recebida pelo servidor
+     */
     private void processarMensagem(String mensagem) {
 
 
@@ -355,6 +364,10 @@ public class jogoController extends Main implements Initializable{
         });
     }
 
+    /**
+     * Pega a partir do processar mensagem, para não ficar tão confuso lá e funciona melhor também
+     * @param mensagem é a mensagem recebida pelo servidor
+     */
     private void agiliza(String mensagem){
 
         Platform.runLater(() -> {
@@ -413,6 +426,9 @@ public class jogoController extends Main implements Initializable{
         });
     }
 
+    /**
+     * Este método serve para verficar se alguém ganhou
+     */
     public void vericarWin(){
 
         for (int a = 0; a < 16; a++) {
@@ -505,6 +521,10 @@ public class jogoController extends Main implements Initializable{
         }
     }
 
+    /**
+     * Este método serve para no botão, dependendo de que jogador é por o seu símbolo. Serve também para melhorar a legitividade do outro método e simplicar
+     * @param Button é o botão que foi clicado
+     */
     public void setPlayerSymbol(Button Button) {
         if (SouPlayerUm) {
             Button.setText("X");
@@ -514,6 +534,10 @@ public class jogoController extends Main implements Initializable{
 
     }
 
+    /**
+     * Este método é usado para por o símbolo do adversário, depois de receber a mensagem
+     * @param Button é o botao que foi clicado pelo adversário
+     */
     public void setAdvSymbol(Button Button) {
 
         if (!SouPlayerUm) {
@@ -524,11 +548,16 @@ public class jogoController extends Main implements Initializable{
 
     }
 
+    /**
+     *  Este método é usado no botao fim de jogo,em adiciona caso ganhe uma win e manda para o menu principal
+     * @param event O ActionEvent é registado ao clicar no botao
+     * @throws IOException Caso exista algum erro ao carregar o FXML.
+     */
     public void fimJogo(ActionEvent event) throws IOException {
 
         if(ganhei) {
 
-            this.jogador.ganhou();
+            this.cliente.ganhou();
 
         }
 
@@ -545,6 +574,16 @@ public class jogoController extends Main implements Initializable{
 
     }
 
+    /**
+     * Este método é da interface Initializable e serve para quando inicializar o FXML já mudar os valores ou até neste caso para saber se sou o player 1 ou 2
+     * @param location
+     * The location used to resolve relative paths for the root object, or
+     * {@code null} if the location is not known.
+     *
+     * @param resources
+     * The resources used to localize the root object, or {@code null} if
+     * the root object was not localized.
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -596,6 +635,10 @@ public class jogoController extends Main implements Initializable{
 
     }
 
+
+    /**
+     * Este método é usado para contruir a "tabela" de adjacencias para saber se a jogada é valida ao mover no outro método.
+     */
     public void criarAdjacias(){
 
         adjacencia[0].add(2); adjacencia[0].add(5); adjacencia[0].add(6); // Button1
@@ -614,19 +657,25 @@ public class jogoController extends Main implements Initializable{
 
     }
 
+    /**
+     * Este método é o tal que verifica se a jogada é válida. Vendo se de onde foi clicado pode ir para o segundo click
+     * @param PrimBot é a string que é o id do primeiro botao clicado
+     * @param SegBot é a string que é o id do segundo botao clicado
+     * @return retorna a dizer se a jogada é válida ou não
+     */
     public boolean movimentoValido(String PrimBot,String SegBot){
 
         boolean saVA =false;
 
-        String PrimBotNumber = PrimBot.substring(6);
-        String SegBotNumber = SegBot.substring(6);
+        String PrimBotNumber = PrimBot.replace("Button", "");
+        String SegBotNumber = SegBot.replace("Button", "");
         int PN = parseInt(PrimBotNumber);
         int SN = parseInt(SegBotNumber);
 
         if(adjacencia[(PN-1)].contains(SN)){
             saVA=true;
             System.out.println("Movimento válido");
-            System.out.println("Primeiro botão: " + PN + "  Segundo Botoa" + SN);
+            System.out.println("Primeiro botão: " + PN + "  Segundo Botao" + SN);
         }
 
         return saVA;

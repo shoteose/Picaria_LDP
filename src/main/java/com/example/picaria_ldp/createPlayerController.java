@@ -27,13 +27,18 @@ public class createPlayerController extends Main {
     private TextField inputAdrr;
     @FXML
     private TextField inputPorta;
-    @FXML
-    private Button botaoCriarJogador;
+
     @FXML
     private Text errorName;
     private Stage stage;
     private Scene scene;
 
+
+    /**
+     *  Este metódo serve para entrar no servidor e ao mesmo tempo registrar o utilizador
+     * @param e O ActionEvent é registado ao clicar no botao
+     * @throws IOException Caso exista algum erro ao carregar o FXML.
+     */
     @FXML
     protected void criarJogador(ActionEvent e) throws IOException {
 
@@ -41,7 +46,7 @@ public class createPlayerController extends Main {
             ip= InetAddress.getByName(inputAdrr.getText());
             ServerPort = Integer.parseInt(inputPorta.getText());
             String nome = this.inputUsername.getText();
-            // s = new Socket(ip, ServerPort);
+
             cliente= new Cliente(nome,ip,ServerPort);
 
         }catch (Exception ex) {
@@ -55,35 +60,11 @@ public class createPlayerController extends Main {
 
         }
 
-        //setDos(new DataOutputStream(s.getOutputStream()));
-        //setDis(new DataInputStream(s.getInputStream()));
-
-            setJogador(new Jogador(this.inputUsername.getText()));
-
             Jogadores.add(cliente);
 
             cliente.enviarMensagem("nome:"+ inputUsername.getText());
 
-            /*Thread sendMessage = new Thread(new Runnable() {
-                @Override
-                public void run() {
 
-                        String msg = "nome:"+ inputUsername.getText();
-
-                        try {
-
-                            dos.writeUTF(msg);
-                            dos.flush();
-
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-
-
-                }
-            });
-
-            sendMessage.start();*/
 
         Parent root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
         stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
@@ -93,12 +74,5 @@ public class createPlayerController extends Main {
 
     }
 
-    public void setStage(Stage stage) {
-        this.stage = stage;
-    }
-
-    public Stage getStage() {
-        return stage;
-    }
 
 }

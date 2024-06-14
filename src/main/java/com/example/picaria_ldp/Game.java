@@ -9,6 +9,14 @@ import java.io.IOException;
 
 public class Game extends Application {
 
+    /**
+     *
+     * @param stage the primary stage for this application, onto which
+     * the application scene can be set.
+     * Applications may create other stages, if needed, but they will not be
+     * primary stages.
+     * @throws IOException
+     */
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("createPlayer.fxml"));
@@ -19,6 +27,10 @@ public class Game extends Application {
         stage.show();
     }
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         launch();
     }
