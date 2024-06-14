@@ -23,7 +23,7 @@ public class Main {
 
     public static boolean SouPlayerUm;
 
-    public static LinkedList<Jogador> Jogadores= new LinkedList<Jogador>();
+    public static LinkedList<Cliente> Jogadores= new LinkedList<Cliente>();
 
     public static Cliente cliente;
 

@@ -13,12 +13,17 @@ public class Cliente {
     private DataInputStream dis;
     private DataOutputStream dos;
 
+    private String nome;
+    private int counterWins;
+
     public ArrayList<String> mensagensR = new ArrayList<String>();
 
     private List<OuvinteMensagem> ouvintes = new ArrayList<>();
 
-    public Cliente(InetAddress ip, int porta) throws IOException {
+    public Cliente(String nome,InetAddress ip, int porta) throws IOException {
 
+        this.nome=nome;
+        this.counterWins=0;
         s = new Socket(ip, porta);
         dis = new DataInputStream(s.getInputStream());
         dos = new DataOutputStream(s.getOutputStream());
@@ -64,5 +69,21 @@ public class Cliente {
 
     public interface OuvinteMensagem {
         void mensagemRecebida(String mensagem);
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getCounterWins() {
+        return counterWins;
+    }
+
+    public void setCounterWins(int counterWins) {
+        this.counterWins = counterWins;
     }
 }

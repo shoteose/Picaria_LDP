@@ -40,8 +40,9 @@ public class createPlayerController extends Main {
         try {
             ip= InetAddress.getByName(inputAdrr.getText());
             ServerPort = Integer.parseInt(inputPorta.getText());
+            String nome = this.inputUsername.getText();
             // s = new Socket(ip, ServerPort);
-            cliente= new Cliente(ip,ServerPort);
+            cliente= new Cliente(nome,ip,ServerPort);
 
         }catch (Exception ex) {
 
@@ -59,7 +60,7 @@ public class createPlayerController extends Main {
 
             setJogador(new Jogador(this.inputUsername.getText()));
 
-            Jogadores.add(jogador);
+            Jogadores.add(cliente);
 
             cliente.enviarMensagem("nome:"+ inputUsername.getText());
 

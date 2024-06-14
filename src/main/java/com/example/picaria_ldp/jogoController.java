@@ -331,6 +331,7 @@ public class jogoController extends Main implements Initializable{
 
                 if (mensagem.startsWith("P2")) {
 
+                    vericarWin();
                     esperaJogo=false;
                     textoGrande.setText("E a tua vez de Jogar");
 
@@ -341,7 +342,7 @@ public class jogoController extends Main implements Initializable{
             }else{
 
                 if (mensagem.startsWith("P1")) {
-
+                    vericarWin();
                     esperaJogo=false;
                     textoGrande.setText("E a tua vez de Jogar");
 

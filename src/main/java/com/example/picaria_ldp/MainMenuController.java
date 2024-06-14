@@ -35,7 +35,7 @@ public class MainMenuController extends Main implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        for(Jogador qwe: Jogadores){
+        for(Cliente qwe: Jogadores){
             String listViewHighScore = qwe.getNome() + " : " + qwe.getCounterWins();
             this.highscore.getItems().add(listViewHighScore);
 
@@ -120,9 +120,9 @@ public class MainMenuController extends Main implements Initializable {
 
     public void ordenarHighScore() {
 
-        Collections.sort(Jogadores, new Comparator<Jogador>() {
+        Collections.sort(Jogadores, new Comparator<Cliente>() {
             @Override
-            public int compare(Jogador j1, Jogador j2) {
+            public int compare(Cliente j1, Cliente j2) {
                 return Integer.compare(j2.getCounterWins(), j1.getCounterWins());
             }
         });
@@ -131,12 +131,12 @@ public class MainMenuController extends Main implements Initializable {
 
     public void listarJogadores() {
 
-        for(Jogador jogador: Jogadores){
+        for(Cliente jogador: Jogadores){
             System.out.println(jogador.getNome() + " : " + jogador.getCounterWins());
         }
 
     }
-    public void addJogador(Jogador jogador) {
+    public void addJogador(Cliente jogador) {
 
         Jogadores.add(jogador);
     }
