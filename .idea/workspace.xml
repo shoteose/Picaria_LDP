@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8088fce2-160f-4e4d-b564-0b7294f0c881" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Jogador.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/MainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/createPlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/createPlayerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/esperaJogoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/esperaJogoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/howToController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/howToController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/jogoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/picaria_ldp/jogoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/howTo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/howTo.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/esperaJogo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/picaria_ldp/esperaJogo.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +147,7 @@
       <workItem from="1718272499336" duration="7560000" />
       <workItem from="1718313914170" duration="6658000" />
       <workItem from="1718355766481" duration="6446000" />
-      <workItem from="1718381008210" duration="5888000" />
+      <workItem from="1718381008210" duration="6225000" />
     </task>
     <servers />
   </component>
