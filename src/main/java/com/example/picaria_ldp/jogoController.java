@@ -207,7 +207,7 @@ public class jogoController extends Main implements Initializable{
 
 
                                         setPlayerSymbol(c);
-                                        Jogada= "P1:2:"+PrimeiroClicado+":"+ SegundoClicado;
+                                        Jogada= "P2:2:"+PrimeiroClicado+":"+ SegundoClicado;
                                         System.out.println(Jogada);
                                         podeJogar = false;
 
@@ -332,6 +332,32 @@ public class jogoController extends Main implements Initializable{
                 }
             }
             podeJogar = true;
+        }
+        else if (parteJogo==2){
+
+            String botaoClicadoUm=partes[2];
+            String botaoClicadoDois=partes[3];
+
+            for (Button b:Vuttons){
+
+                if(Objects.equals(b.getId(), botaoClicadoUm)){
+
+                    System.out.println(b.getId() + botaoClicadoUm);
+                    b.setText("");
+
+                }
+
+                if(Objects.equals(b.getId(), botaoClicadoDois)){
+
+                    System.out.println(b.getId() + botaoClicadoDois);
+                    setAdvSymbol(b);
+
+                    podeJogar = true;
+                    fimT.setDisable(false);
+                }
+            }
+            podeJogar = true;
+
         }
 
         });
