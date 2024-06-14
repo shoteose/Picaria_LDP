@@ -376,9 +376,11 @@ public class jogoController extends Main implements Initializable{
 
                     podeJogar = true;
                     fimT.setDisable(false);
+                    vericarWin();
                 }
             }
             podeJogar = true;
+            vericarWin();
         }
         else if (parteJogo==2){
 
@@ -401,10 +403,11 @@ public class jogoController extends Main implements Initializable{
 
                     podeJogar = true;
                     fimT.setDisable(false);
+
                 }
             }
             podeJogar = true;
-
+            vericarWin();
         }
 
         });
