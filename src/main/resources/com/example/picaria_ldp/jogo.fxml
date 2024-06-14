@@ -114,6 +114,5 @@
       </Text>
       <Button fx:id="fimT" layoutX="483.0" layoutY="373.0" mnemonicParsing="false" onAction="#fimTurno" prefHeight="25.0" prefWidth="95.0" text="Acabar Turno" />
       <Button fx:id="botaoFinal" layoutX="229.0" layoutY="204.0" mnemonicParsing="false" onAction="#fimJogo" prefHeight="62.0" prefWidth="139.0" text="Voltar ao Menu" />
-      <Button fx:id="repeat" layoutX="483.0" layoutY="314.0" mnemonicParsing="false" onAction="#reset" prefHeight="25.0" prefWidth="95.0" text="Repetir Jogada" />
   </children>
 </AnchorPane>

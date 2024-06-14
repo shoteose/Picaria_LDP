@@ -135,7 +135,7 @@ public class jogoController extends Main implements Initializable{
 
                         }else{
 
-                            if(!Button.getText().equals("O") && !Button.getText().equals("")) {
+                            if(!Button.getText().equals("O")) {
 
                                 SegundoClicado = Button.getId();
 
@@ -222,7 +222,7 @@ public class jogoController extends Main implements Initializable{
 
                         }else{
 
-                            if(!Button.getText().equals("X") && !Button.getText().equals("")) {
+                            if(!Button.getText().equals("X")) {
 
                                 SegundoClicado= Button.getId();
 
@@ -269,16 +269,6 @@ public class jogoController extends Main implements Initializable{
         }
     }
 
-    public void reset(){
-
-        this.Jogada ="";
-        this.counterClick = 0;
-        this.lastButton1.setText("");
-        this.lastButton2.setText("");
-        this.PrimeiroClicado = "";
-        this.SegundoClicado = "";
-
-    }
     public void fimTurno(ActionEvent event) throws IOException {
 
 
