@@ -56,6 +56,9 @@ public class jogoController extends Main implements Initializable{
     private Button fimT;
 
     @FXML
+    private Button botaoFinal;
+
+    @FXML
     private Text textoGrande;
     private int count = 0;
     private boolean podeJogar = true;
@@ -63,6 +66,9 @@ public class jogoController extends Main implements Initializable{
     private Text infoPecaUm;
 
     private String Jogada;
+
+    private Button lastButton1;
+    private Button lastButton2;
 
     private String PrimeiroClicado;
     private String SegundoClicado;
@@ -86,7 +92,7 @@ public class jogoController extends Main implements Initializable{
 
                         if(Button != Button7){
 
-                            if(!Button.getText().equals("O")){
+                            if(!Button.getText().equals("O") && !Button.getText().equals("X")){
 
                                 setPlayerSymbol(Button);
                                 count++;
@@ -100,7 +106,7 @@ public class jogoController extends Main implements Initializable{
                                 for(Button c : Vuttons){
 
                                     if(Button == c){
-
+                                        lastButton1= c;
                                         Jogada= "P1:1:"+c.getId();
                                         System.out.println(c.getId());
                                         podeEnviar = true;
@@ -118,7 +124,7 @@ public class jogoController extends Main implements Initializable{
 
                         if(counterClick == 0){
 
-                            if(!Button.getText().equals("O")){
+                            if(!Button.getText().equals("O") && !Button.getText().equals("")){
 
                                 PrimeiroClicado= Button.getId();
                                 counterClick++;
@@ -128,7 +134,7 @@ public class jogoController extends Main implements Initializable{
 
                         }else{
 
-                            if(!Button.getText().equals("O")) {
+                            if(!Button.getText().equals("O") && !Button.getText().equals("")) {
 
                                 SegundoClicado = Button.getId();
 
@@ -141,17 +147,17 @@ public class jogoController extends Main implements Initializable{
 
                                         if (PrimeiroClicado.equals(c.getId())) {
 
+                                            lastButton1=c;
                                             c.setText("");
 
                                         }
 
                                         if (SegundoClicado.equals(c.getId())) {
 
-
+                                            lastButton2=c;
                                             setPlayerSymbol(c);
                                             Jogada = "P1:2:" + PrimeiroClicado + ":" + SegundoClicado;
                                             System.out.println(Jogada);
-                                            vericarWin();
                                             podeJogar = false;
                                             podeEnviar = true;
 
@@ -180,7 +186,7 @@ public class jogoController extends Main implements Initializable{
 
                         if(Button != Button7){
 
-                            if(!Button.getText().equals("X")) {
+                            if(!Button.getText().equals("O") && !Button.getText().equals("X")) {
 
                                 setPlayerSymbol(Button);
                                 count++;
@@ -193,7 +199,7 @@ public class jogoController extends Main implements Initializable{
                                 for (Button c : Vuttons) {
 
                                     if (Button == c) {
-
+                                        lastButton1=c;
                                         Jogada = "P2:1:" + c.getId();
                                         System.out.println(c.getId());
 
@@ -207,7 +213,7 @@ public class jogoController extends Main implements Initializable{
 
                         if(counterClick == 0){
 
-                            if(!Button.getText().equals("X")) {
+                            if(!Button.getText().equals("X") && !Button.getText().equals("")) {
 
                                 PrimeiroClicado = Button.getId();
                                 counterClick++;
@@ -215,7 +221,7 @@ public class jogoController extends Main implements Initializable{
 
                         }else{
 
-                            if(!Button.getText().equals("X")) {
+                            if(!Button.getText().equals("X") && !Button.getText().equals("")) {
 
                                 SegundoClicado= Button.getId();
 
@@ -228,19 +234,18 @@ public class jogoController extends Main implements Initializable{
                                     for(Button c : Vuttons){
 
                                         if(PrimeiroClicado.equals(c.getId())){
-
+                                            lastButton1=c;
                                             c.setText("");
 
                                         }
 
                                         if(SegundoClicado.equals(c.getId())){
 
-
+                                            lastButton2=c;
                                             setPlayerSymbol(c);
                                             Jogada= "P2:2:"+PrimeiroClicado+":"+ SegundoClicado;
                                             System.out.println(Jogada);
                                             podeJogar = false;
-                                            vericarWin();
                                             podeEnviar = true;
 
                                         }
@@ -263,9 +268,19 @@ public class jogoController extends Main implements Initializable{
         }
     }
 
+    public void reset(){
+
+        this.Jogada ="";
+        this.counterClick = 0;
+        this.lastButton1.setText("");
+        this.lastButton2.setText("");
+        this.PrimeiroClicado = "";
+        this.SegundoClicado = "";
+
+    }
     public void fimTurno(ActionEvent event) throws IOException {
 
-        vericarWin();
+
         if(podeEnviar){
 
             if(!Objects.equals(Jogada, "")){
@@ -277,6 +292,7 @@ public class jogoController extends Main implements Initializable{
                     Platform.runLater(() -> {
 
                         textoGrande.setText("A espera da Jogada do oponente");
+                        vericarWin();
 
                     });
 
@@ -433,10 +449,13 @@ public class jogoController extends Main implements Initializable{
 
                     this.podeJogar = false;
                     this.count = 0;
+                    this.fimT.setDisable(true);
 
                     cliente.enviarMensagem("G1");
                     Platform.runLater(() -> {
                         textoGrande.setText("Ganhaste!! :)");
+                        this.botaoFinal.setDisable(false);
+                        this.botaoFinal.setVisible(true);
                     });
 
                 } else if (linha.equals("OOO")) {
@@ -446,6 +465,8 @@ public class jogoController extends Main implements Initializable{
 
                     Platform.runLater(() -> {
                         textoGrande.setText("Perdeste!! :(");
+                        this.botaoFinal.setDisable(false);
+                        this.botaoFinal.setVisible(true);
                     });
                     cliente.enviarMensagem("G2");
                 }
@@ -459,6 +480,8 @@ public class jogoController extends Main implements Initializable{
                     cliente.enviarMensagem("G1");
                     Platform.runLater(() -> {
                         textoGrande.setText("Perdeste!! :(");
+                        this.botaoFinal.setDisable(false);
+                        this.botaoFinal.setVisible(true);
 
                     });
 
@@ -469,6 +492,8 @@ public class jogoController extends Main implements Initializable{
 
                     Platform.runLater(() -> {
                         textoGrande.setText("Ganhaste!! :)");
+                        this.botaoFinal.setDisable(false);
+                        this.botaoFinal.setVisible(true);
 
                     });
                     cliente.enviarMensagem("G2");
@@ -497,8 +522,28 @@ public class jogoController extends Main implements Initializable{
 
     }
 
+    public void fimJogo(ActionEvent event) throws IOException {
+
+        
+
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
+            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        this.botaoFinal.setDisable(true);
+        this.botaoFinal.setVisible(false);
 
         podeEnviar=false;
 
