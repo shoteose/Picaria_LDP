@@ -560,6 +560,9 @@ public class jogoController extends Main implements Initializable{
             this.cliente.ganhou();
 
         }
+        this.count=0;
+        this.counterClick=0;
+        this.podeJogar = true;
 
         try {
             Parent root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));

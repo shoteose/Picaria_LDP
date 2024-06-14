@@ -81,7 +81,8 @@ public class esperaJogoController extends Main implements Initializable {
                     textoInfo.setText("Partida Encontrada, és o primeiro a Jogar. És o (X)");
                     botaoJogar.setVisible(true);
                     botaoSair.setVisible(false);
-                } else {
+
+                } else if (vez %2 == 1) {
                     System.out.println(SouPlayerUm);
                     textoInfo.setText("Partida Encontrada, é a vez do oponente. És o (O)");
                     SouPlayerUm = false;
