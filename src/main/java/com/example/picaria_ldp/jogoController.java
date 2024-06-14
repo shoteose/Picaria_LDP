@@ -24,6 +24,7 @@ public class jogoController extends Main implements Initializable{
     private Stage stage;
     private Scene scene;
 
+    private boolean ganhei;
     ArrayList<Button> Vuttons = new ArrayList<Button>();
     private int playerTurn = 0;
     @FXML
@@ -454,6 +455,7 @@ public class jogoController extends Main implements Initializable{
                     cliente.enviarMensagem("G1");
                     Platform.runLater(() -> {
                         textoGrande.setText("Ganhaste!! :)");
+                        this.ganhei = true;
                         this.botaoFinal.setDisable(false);
                         this.botaoFinal.setVisible(true);
                     });
@@ -462,9 +464,11 @@ public class jogoController extends Main implements Initializable{
 
                     this.podeJogar = false;
                     this.count = 0;
+                    this.fimT.setDisable(true);
 
                     Platform.runLater(() -> {
                         textoGrande.setText("Perdeste!! :(");
+                        this.ganhei=false;
                         this.botaoFinal.setDisable(false);
                         this.botaoFinal.setVisible(true);
                     });
@@ -476,10 +480,12 @@ public class jogoController extends Main implements Initializable{
 
                     this.podeJogar = false;
                     this.count = 0;
+                    this.fimT.setDisable(true);
 
                     cliente.enviarMensagem("G1");
                     Platform.runLater(() -> {
                         textoGrande.setText("Perdeste!! :(");
+                        this.ganhei=false;
                         this.botaoFinal.setDisable(false);
                         this.botaoFinal.setVisible(true);
 
@@ -489,9 +495,11 @@ public class jogoController extends Main implements Initializable{
 
                     this.podeJogar = false;
                     this.count = 0;
+                    this.fimT.setDisable(true);
 
                     Platform.runLater(() -> {
                         textoGrande.setText("Ganhaste!! :)");
+                        this.ganhei = true;
                         this.botaoFinal.setDisable(false);
                         this.botaoFinal.setVisible(true);
 
@@ -524,7 +532,11 @@ public class jogoController extends Main implements Initializable{
 
     public void fimJogo(ActionEvent event) throws IOException {
 
-        
+        if(ganhei) {
+
+            this.jogador.ganhou();
+
+        }
 
         try {
             Parent root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));

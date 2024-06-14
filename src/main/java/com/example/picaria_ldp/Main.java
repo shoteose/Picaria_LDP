@@ -17,19 +17,13 @@ public class Main {
     public static Stage stagee;
     public static int ServerPort;
     public InetAddress ip;
-    public static boolean temInimigo = false;
+
     public static boolean esperaJogo = false;
 
 
     public static boolean SouPlayerUm;
 
-    public static int counterE = 0;
-
-    public static ArrayList<String> historico = new ArrayList();
-
     public static LinkedList<Jogador> Jogadores= new LinkedList<Jogador>();
-    //public static DataInputStream dis;
-    //public static DataOutputStream dos;
 
     public static Cliente cliente;
 
