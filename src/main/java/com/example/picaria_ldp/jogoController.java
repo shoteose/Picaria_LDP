@@ -15,10 +15,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.io.Serializable;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.ResourceBundle;
+import java.util.*;
 
 import static java.lang.Integer.parseInt;
 
@@ -60,13 +57,19 @@ public class jogoController extends Main implements Initializable{
 
     @FXML
     private Text textoGrande;
-    private int count = 1;
+    private int count = 0;
     private boolean podeJogar = true;
     @FXML
     private Text infoPecaUm;
 
     private String Jogada;
 
+    private String PrimeiroClicado;
+    private String SegundoClicado;
+
+    private int counterClick = 0;
+
+    private List<Integer>[] adjacencia = new ArrayList[13];
 
     @FXML
     public void jogo(ActionEvent e){
@@ -78,15 +81,16 @@ public class jogoController extends Main implements Initializable{
                 Button Button = (Button)e.getSource();
                 Button.setOnMouseClicked((mouseEvent) -> {
 
-                    if(count <= 3){
+                    if(count < 3){
 
                         if(Button != Button7){
 
-                            setPlayerSymbol(Button);
 
+                            setPlayerSymbol(Button);
+                            count++;
                             infoPecaUm.setText("Peças do Jogador: "+ (3-count));
 
-                            count++;
+
                             podeJogar = false;
                             fimT.setDisable(false);
 
@@ -105,7 +109,44 @@ public class jogoController extends Main implements Initializable{
                         }
                     }else{
 
-                        System.out.println("OPA NAO DEVIA DE DAR");
+                        if(counterClick == 0){
+
+                            PrimeiroClicado= Button.getId();
+                            counterClick++;
+
+                        }else{
+
+                            SegundoClicado= Button.getId();
+
+
+                            if(movimentoValido(PrimeiroClicado, SegundoClicado)){
+
+                                counterClick = 0;
+
+                                for(Button c : Vuttons){
+
+                                    if(PrimeiroClicado.equals(c.getId())){
+
+                                        c.setText("");
+
+                                    }
+
+                                    if(SegundoClicado.equals(c.getId())){
+
+
+                                        setPlayerSymbol(c);
+                                        Jogada= "P1:2:"+PrimeiroClicado+":"+ SegundoClicado;
+                                        System.out.println(Jogada);
+                                        podeJogar = false;
+
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
                     }
 
                 });
@@ -115,7 +156,7 @@ public class jogoController extends Main implements Initializable{
                 Button Button = (Button)e.getSource();
                 Button.setOnMouseClicked((mouseEvent) -> {
 
-                    if(count <= 3){
+                    if(count < 3){
 
                         if(Button != Button7){
 
@@ -140,7 +181,45 @@ public class jogoController extends Main implements Initializable{
                         }
                     }else{
 
-                        System.out.println("OPA NAO DEVIA DE DAR");
+                        if(counterClick == 0){
+
+                            PrimeiroClicado= Button.getId();
+                            counterClick++;
+
+                        }else{
+
+                            SegundoClicado= Button.getId();
+
+
+                            if(movimentoValido(PrimeiroClicado, SegundoClicado)){
+
+                                counterClick = 0;
+
+                                for(Button c : Vuttons){
+
+                                    if(PrimeiroClicado.equals(c.getId())){
+
+                                        c.setText("");
+
+                                    }
+
+                                    if(SegundoClicado.equals(c.getId())){
+
+
+                                        setPlayerSymbol(c);
+                                        Jogada= "P1:2:"+PrimeiroClicado+":"+ SegundoClicado;
+                                        System.out.println(Jogada);
+                                        podeJogar = false;
+
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+
                     }
 
                 });
@@ -281,7 +360,9 @@ public class jogoController extends Main implements Initializable{
                 default -> null;
             };
 
-            if (linha.equals("XXX")) {
+            System.out.println("Linha " + a + ": " + linha); // Diagnóstico
+
+            if ("XXX".equals(linha)) {
 
                 this.podeJogar = false;
                 this.count = 0;
@@ -326,6 +407,21 @@ public class jogoController extends Main implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        for (int i = 0; i < 13; i++) {
+            adjacencia[i] = new ArrayList<>();
+        }
+
+        criarAdjacias();
+
+        for (int i = 0; i < 13; i++) {
+            System.out.print("Espaço " + (i + 1) + " está adjacente a: ");
+            for (int adj : adjacencia[i]) {
+                System.out.print((adj ) + " ");
+            }
+            System.out.println();
+        }
+
+
         cliente.adicionarOuvinte(mensagem -> {
             javafx.application.Platform.runLater(() -> processarMensagem(mensagem));
         });
@@ -352,5 +448,41 @@ public class jogoController extends Main implements Initializable{
             Vuttons.add(Button13);
 
 
+    }
+
+    public void criarAdjacias(){
+
+        adjacencia[0].add(1); adjacencia[0].add(2); adjacencia[0].add(5); adjacencia[0].add(6); // Button1
+        adjacencia[1].add(1); adjacencia[1].add(2);  adjacencia[1].add(3); adjacencia[1].add(4); adjacencia[1].add(5); // Button2
+        adjacencia[2].add(2); adjacencia[2].add(3); adjacencia[2].add(4); adjacencia[2].add(8); // Button3
+        adjacencia[3].add(2); adjacencia[3].add(3); adjacencia[3].add(4); adjacencia[3].add(7); adjacencia[3].add(8); // Button4
+        adjacencia[4].add(1); adjacencia[4].add(2); adjacencia[4].add(5); adjacencia[4].add(6); adjacencia[4].add(7); // Button5
+        adjacencia[5].add(1); adjacencia[5].add(5); adjacencia[5].add(6); adjacencia[5].add(7); adjacencia[5].add(10); adjacencia[5].add(11); // Button6
+        adjacencia[6].add(2); adjacencia[6].add(4); adjacencia[6].add(5); adjacencia[6].add(6); adjacencia[6].add(7); adjacencia[6].add(8); adjacencia[6].add(9); adjacencia[6].add(10); adjacencia[6].add(12);// Button7
+        adjacencia[7].add(3); adjacencia[7].add(4); adjacencia[7].add(7); adjacencia[7].add(8); adjacencia[7].add(9); adjacencia[7].add(13); // Button8
+        adjacencia[8].add(7); adjacencia[8].add(8); adjacencia[8].add(9); adjacencia[8].add(12); adjacencia[8].add(13); // Button9
+        adjacencia[9].add(6); adjacencia[9].add(7); adjacencia[9].add(10); adjacencia[9].add(11); adjacencia[9].add(12); // Button10
+        adjacencia[10].add(6); adjacencia[10].add(10); adjacencia[10].add(11); adjacencia[10].add(12); // Button11
+        adjacencia[11].add(7); adjacencia[11].add(9); adjacencia[11].add(10); adjacencia[11].add(11); adjacencia[11].add(12); adjacencia[11].add(13); // Button12
+        adjacencia[12].add(8); adjacencia[12].add(9); adjacencia[12].add(12); adjacencia[12].add(13); // Button13
+
+    }
+
+    public boolean movimentoValido(String PrimBot,String SegBot){
+
+        boolean saVA =false;
+
+        String PrimBotNumber = PrimBot.substring(6);
+        String SegBotNumber = SegBot.substring(6);
+        int PN = parseInt(PrimBotNumber);
+        int SN = parseInt(SegBotNumber);
+
+        if(adjacencia[(PN-1)].contains(SN)){
+            saVA=true;
+            System.out.println("Movimento válido");
+            System.out.println("Primeiro botão: " + PN + "  Segundo Botoa" + SN);
+        }
+
+        return saVA;
     }
 }
