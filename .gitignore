@@ -40,3 +40,5 @@ build/
 .idea/workspace.xml
 .idea/workspace.xml
 src/main/java/com/example/picaria_ldp/HelloApplication.java
+.idea/workspace.xml
+/.idea

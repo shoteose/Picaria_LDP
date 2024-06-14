@@ -15,6 +15,13 @@ public class howToController {
     private Stage stage;
     private Scene scene;
 
+
+
+    /**
+     * Este método é para voltar para o FXML do Menu
+     * @param event O ActionEvent é registado ao clicar no botao
+     * @throws IOException Caso exista algum erro ao carregar o FXML.
+     */
     @FXML
     protected void voltar(ActionEvent event) throws IOException {
         try {
@@ -28,12 +35,5 @@ public class howToController {
         }
     }
 
-    public void setStage(Stage stage) {
-        this.stage = stage;
-    }
-
-    public Stage getStage() {
-        return stage;
-    }
 
 }
