@@ -151,6 +151,7 @@ public class jogoController extends Main implements Initializable{
                                             setPlayerSymbol(c);
                                             Jogada = "P1:2:" + PrimeiroClicado + ":" + SegundoClicado;
                                             System.out.println(Jogada);
+                                            vericarWin();
                                             podeJogar = false;
                                             podeEnviar = true;
 
@@ -239,6 +240,8 @@ public class jogoController extends Main implements Initializable{
                                             Jogada= "P2:2:"+PrimeiroClicado+":"+ SegundoClicado;
                                             System.out.println(Jogada);
                                             podeJogar = false;
+                                            vericarWin();
+                                            podeEnviar = true;
 
                                         }
 
@@ -424,26 +427,54 @@ public class jogoController extends Main implements Initializable{
 
             System.out.println("Linha " + a + ": " + linha); // Diagnóstico
 
-            if ("XXX".equals(linha)) {
+            if(SouPlayerUm){
 
-                this.podeJogar = false;
-                this.count = 0;
+                if ("XXX".equals(linha)) {
 
-                cliente.enviarMensagem("G1");
-                Platform.runLater(() -> {
-                    textoGrande.setText("Ganhaste!! :)");
-                });
+                    this.podeJogar = false;
+                    this.count = 0;
 
-            } else if (linha.equals("OOO")) {
+                    cliente.enviarMensagem("G1");
+                    Platform.runLater(() -> {
+                        textoGrande.setText("Ganhaste!! :)");
+                    });
 
-                this.podeJogar = false;
-                this.count = 0;
+                } else if (linha.equals("OOO")) {
 
-                Platform.runLater(() -> {
-                    textoGrande.setText("Perdeste!! :(");
-                });
-                cliente.enviarMensagem("G2");
+                    this.podeJogar = false;
+                    this.count = 0;
+
+                    Platform.runLater(() -> {
+                        textoGrande.setText("Perdeste!! :(");
+                    });
+                    cliente.enviarMensagem("G2");
+                }
+
+            }else{
+                if ("XXX".equals(linha)) {
+
+                    this.podeJogar = false;
+                    this.count = 0;
+
+                    cliente.enviarMensagem("G1");
+                    Platform.runLater(() -> {
+                        textoGrande.setText("Perdeste!! :(");
+
+                    });
+
+                } else if (linha.equals("OOO")) {
+
+                    this.podeJogar = false;
+                    this.count = 0;
+
+                    Platform.runLater(() -> {
+                        textoGrande.setText("Ganhaste!! :)");
+
+                    });
+                    cliente.enviarMensagem("G2");
+                }
             }
+
         }
     }
 
