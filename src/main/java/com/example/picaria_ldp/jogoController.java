@@ -516,19 +516,19 @@ public class jogoController extends Main implements Initializable{
 
     public void criarAdjacias(){
 
-        adjacencia[0].add(1); adjacencia[0].add(2); adjacencia[0].add(5); adjacencia[0].add(6); // Button1
-        adjacencia[1].add(1); adjacencia[1].add(2);  adjacencia[1].add(3); adjacencia[1].add(4); adjacencia[1].add(5); // Button2
-        adjacencia[2].add(2); adjacencia[2].add(3); adjacencia[2].add(4); adjacencia[2].add(8); // Button3
-        adjacencia[3].add(2); adjacencia[3].add(3); adjacencia[3].add(4); adjacencia[3].add(7); adjacencia[3].add(8); // Button4
-        adjacencia[4].add(1); adjacencia[4].add(2); adjacencia[4].add(5); adjacencia[4].add(6); adjacencia[4].add(7); // Button5
-        adjacencia[5].add(1); adjacencia[5].add(5); adjacencia[5].add(6); adjacencia[5].add(7); adjacencia[5].add(10); adjacencia[5].add(11); // Button6
-        adjacencia[6].add(2); adjacencia[6].add(4); adjacencia[6].add(5); adjacencia[6].add(6); adjacencia[6].add(7); adjacencia[6].add(8); adjacencia[6].add(9); adjacencia[6].add(10); adjacencia[6].add(12);// Button7
-        adjacencia[7].add(3); adjacencia[7].add(4); adjacencia[7].add(7); adjacencia[7].add(8); adjacencia[7].add(9); adjacencia[7].add(13); // Button8
-        adjacencia[8].add(7); adjacencia[8].add(8); adjacencia[8].add(9); adjacencia[8].add(12); adjacencia[8].add(13); // Button9
-        adjacencia[9].add(6); adjacencia[9].add(7); adjacencia[9].add(10); adjacencia[9].add(11); adjacencia[9].add(12); // Button10
-        adjacencia[10].add(6); adjacencia[10].add(10); adjacencia[10].add(11); adjacencia[10].add(12); // Button11
-        adjacencia[11].add(7); adjacencia[11].add(9); adjacencia[11].add(10); adjacencia[11].add(11); adjacencia[11].add(12); adjacencia[11].add(13); // Button12
-        adjacencia[12].add(8); adjacencia[12].add(9); adjacencia[12].add(12); adjacencia[12].add(13); // Button13
+        adjacencia[0].add(2); adjacencia[0].add(5); adjacencia[0].add(6); // Button1
+        adjacencia[1].add(1); adjacencia[1].add(3); adjacencia[1].add(4); adjacencia[1].add(5); // Button2
+        adjacencia[2].add(2); adjacencia[2].add(4); adjacencia[2].add(8); // Button3
+        adjacencia[3].add(2); adjacencia[3].add(3); adjacencia[3].add(7); adjacencia[3].add(8); // Button4
+        adjacencia[4].add(1); adjacencia[4].add(2); adjacencia[4].add(6); adjacencia[4].add(7); // Button5
+        adjacencia[5].add(1); adjacencia[5].add(5); adjacencia[5].add(7); adjacencia[5].add(10); adjacencia[5].add(11); // Button6
+        adjacencia[6].add(2); adjacencia[6].add(4); adjacencia[6].add(5); adjacencia[6].add(6); adjacencia[6].add(8); adjacencia[6].add(9); adjacencia[6].add(10); adjacencia[6].add(12);// Button7
+        adjacencia[7].add(3); adjacencia[7].add(4); adjacencia[7].add(7); adjacencia[7].add(9); adjacencia[7].add(13); // Button8
+        adjacencia[8].add(7); adjacencia[8].add(8); adjacencia[8].add(12); adjacencia[8].add(13); // Button9
+        adjacencia[9].add(6); adjacencia[9].add(7); adjacencia[9].add(11); adjacencia[9].add(12); // Button10
+        adjacencia[10].add(6); adjacencia[10].add(10); adjacencia[10].add(12); // Button11
+        adjacencia[11].add(7); adjacencia[11].add(9); adjacencia[11].add(10); adjacencia[11].add(11); adjacencia[11].add(13); // Button12
+        adjacencia[12].add(8); adjacencia[12].add(9); adjacencia[12].add(12); // Button13
 
     }
 
