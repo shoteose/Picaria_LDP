@@ -67,6 +67,7 @@ public class jogoController extends Main implements Initializable{
     private String PrimeiroClicado;
     private String SegundoClicado;
 
+    private boolean podeEnviar;
     private int counterClick = 0;
 
     private List<Integer>[] adjacencia = new ArrayList[13];
@@ -85,64 +86,82 @@ public class jogoController extends Main implements Initializable{
 
                         if(Button != Button7){
 
+                            if(!Button.getText().equals("O")){
 
-                            setPlayerSymbol(Button);
-                            count++;
-                            infoPecaUm.setText("Peças do Jogador: "+ (3-count));
+                                setPlayerSymbol(Button);
+                                count++;
+                                infoPecaUm.setText("Peças do Jogador: "+ (3-count));
 
 
-                            podeJogar = false;
-                            fimT.setDisable(false);
+                                podeJogar = false;
 
-                            for(Button c : Vuttons){
+                                fimT.setDisable(false);
 
-                                if(Button == c){
+                                for(Button c : Vuttons){
 
-                                    Jogada= "P1:1:"+c.getId();
-                                    System.out.println(c.getId());
+                                    if(Button == c){
+
+                                        Jogada= "P1:1:"+c.getId();
+                                        System.out.println(c.getId());
+                                        podeEnviar = true;
+                                    }
+
 
                                 }
 
-
                             }
 
+
                         }
+
                     }else{
 
                         if(counterClick == 0){
 
-                            PrimeiroClicado= Button.getId();
-                            counterClick++;
+                            if(!Button.getText().equals("O")){
+
+                                PrimeiroClicado= Button.getId();
+                                counterClick++;
+                            }
+
+
 
                         }else{
 
-                            SegundoClicado= Button.getId();
+                            if(!Button.getText().equals("O")) {
+
+                                SegundoClicado = Button.getId();
 
 
-                            if(movimentoValido(PrimeiroClicado, SegundoClicado)){
+                                if (movimentoValido(PrimeiroClicado, SegundoClicado)) {
 
-                                counterClick = 0;
+                                    counterClick = 0;
 
-                                for(Button c : Vuttons){
+                                    for (Button c : Vuttons) {
 
-                                    if(PrimeiroClicado.equals(c.getId())){
+                                        if (PrimeiroClicado.equals(c.getId())) {
 
-                                        c.setText("");
+                                            c.setText("");
+
+                                        }
+
+                                        if (SegundoClicado.equals(c.getId())) {
+
+
+                                            setPlayerSymbol(c);
+                                            Jogada = "P1:2:" + PrimeiroClicado + ":" + SegundoClicado;
+                                            System.out.println(Jogada);
+                                            podeJogar = false;
+                                            podeEnviar = true;
+
+                                        }
 
                                     }
 
-                                    if(SegundoClicado.equals(c.getId())){
-
-
-                                        setPlayerSymbol(c);
-                                        Jogada= "P1:2:"+PrimeiroClicado+":"+ SegundoClicado;
-                                        System.out.println(Jogada);
-                                        podeJogar = false;
-
-                                    }
-
+                                } else {
+                                    PrimeiroClicado = "";
+                                    SegundoClicado = "";
                                 }
-
                             }
 
                         }
@@ -160,56 +179,68 @@ public class jogoController extends Main implements Initializable{
 
                         if(Button != Button7){
 
-                            setPlayerSymbol(Button);
-                            count++;
-                            infoPecaUm.setText("Peças do Jogador: "+ (3-count));
+                            if(!Button.getText().equals("X")) {
 
-                            podeJogar = false;
-                            fimT.setDisable(false);
+                                setPlayerSymbol(Button);
+                                count++;
+                                infoPecaUm.setText("Peças do Jogador: " + (3 - count));
 
-                            for(Button c : Vuttons){
+                                podeJogar = false;
+                                fimT.setDisable(false);
+                                podeEnviar = true;
 
-                                if(Button == c){
+                                for (Button c : Vuttons) {
 
-                                    Jogada= "P2:1:"+c.getId();
-                                    System.out.println(c.getId());
+                                    if (Button == c) {
+
+                                        Jogada = "P2:1:" + c.getId();
+                                        System.out.println(c.getId());
+
+                                    }
+
 
                                 }
-
-
                             }
                         }
                     }else{
 
                         if(counterClick == 0){
 
-                            PrimeiroClicado= Button.getId();
-                            counterClick++;
+                            if(!Button.getText().equals("X")) {
+
+                                PrimeiroClicado = Button.getId();
+                                counterClick++;
+                            }
 
                         }else{
 
-                            SegundoClicado= Button.getId();
+                            if(!Button.getText().equals("X")) {
+
+                                SegundoClicado= Button.getId();
 
 
-                            if(movimentoValido(PrimeiroClicado, SegundoClicado)){
+                                if(movimentoValido(PrimeiroClicado, SegundoClicado)){
 
-                                counterClick = 0;
+                                    counterClick = 0;
+                                    podeEnviar = true;
 
-                                for(Button c : Vuttons){
+                                    for(Button c : Vuttons){
 
-                                    if(PrimeiroClicado.equals(c.getId())){
+                                        if(PrimeiroClicado.equals(c.getId())){
 
-                                        c.setText("");
+                                            c.setText("");
 
-                                    }
+                                        }
 
-                                    if(SegundoClicado.equals(c.getId())){
+                                        if(SegundoClicado.equals(c.getId())){
 
 
-                                        setPlayerSymbol(c);
-                                        Jogada= "P2:2:"+PrimeiroClicado+":"+ SegundoClicado;
-                                        System.out.println(Jogada);
-                                        podeJogar = false;
+                                            setPlayerSymbol(c);
+                                            Jogada= "P2:2:"+PrimeiroClicado+":"+ SegundoClicado;
+                                            System.out.println(Jogada);
+                                            podeJogar = false;
+
+                                        }
 
                                     }
 
@@ -232,21 +263,26 @@ public class jogoController extends Main implements Initializable{
     public void fimTurno(ActionEvent event) throws IOException {
 
         vericarWin();
+        if(podeEnviar){
 
+            if(!Objects.equals(Jogada, "")){
+                if(!Objects.equals(Jogada,cliente.mensagensR.getLast())){
 
-        if(!Objects.equals(Jogada, "")){
-            if(!Objects.equals(Jogada,cliente.mensagensR.getLast())){
+                    cliente.enviarMensagem(Jogada);
+                    podeEnviar = false;
 
-                cliente.enviarMensagem(Jogada);
+                    Platform.runLater(() -> {
 
-                Platform.runLater(() -> {
+                        textoGrande.setText("A espera da Jogada do oponente");
 
-                    textoGrande.setText("A espera da Jogada do Oponente");
+                    });
 
-                });
-
+                }
             }
+
         }
+
+
 
         /*
         Thread sendMessage = new Thread(new Runnable() {
@@ -286,7 +322,7 @@ public class jogoController extends Main implements Initializable{
                 if (mensagem.startsWith("P2")) {
 
                     esperaJogo=false;
-                    textoGrande.setText(mensagem);
+                    textoGrande.setText("E a tua vez de Jogar");
 
                     agiliza(mensagem);
 
@@ -297,7 +333,7 @@ public class jogoController extends Main implements Initializable{
                 if (mensagem.startsWith("P1")) {
 
                     esperaJogo=false;
-                    textoGrande.setText(mensagem);
+                    textoGrande.setText("E a tua vez de Jogar");
 
                     agiliza(mensagem);
 
@@ -432,6 +468,8 @@ public class jogoController extends Main implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        podeEnviar=false;
 
         for (int i = 0; i < 13; i++) {
             adjacencia[i] = new ArrayList<>();
