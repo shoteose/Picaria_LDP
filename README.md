@@ -22,9 +22,6 @@
 ```
 https://github.com/shoteose/Picaria_LDP_Servidor
 ```
-<p>O Servidor feito também em JavaFX para maior praticalidade.</p>
-  
-
   
 <h2>💻 Built with</h2>
 
