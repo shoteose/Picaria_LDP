@@ -1,26 +1,31 @@
 <h1 align="center" id="title">Picaria</h1>
 
-<p align="center"><img src="https://socialify.git.ci/shoteose/NurseSimulatorGame/image?language=1&name=1&owner=1&pattern=Plus&theme=Light" alt="NurseSimulatorGame" width="640" height="320" /></p>
+<p align="center"><img src="https://socialify.git.ci/shoteose/Picaria_LDP/image?language=1&amp;name=1&amp;owner=1&amp;theme=Light" alt="project-image"></p>
 
-<p id="description" align="center">Este é um projeto prático desenvolvido para a disciplina de Sistemas Multimédia no âmbito do Curso de Engenharia da Computação Gráfica e Multimédia.</p>
+<p id="description" align="center">Este é um projeto prático desenvolvido para a disciplina de Laboratório de Programação no Instituto Politécnico de Viana do Castelo no âmbito do Curso de Engenharia da Computação Gráfica e Multimédia.</p>
 
-<p align="center">Consiste num "simulador" de enfermagem, relacionado com o curso de Enfermagem da Escola Superior de Saúde</p>
+<p align="center">Consiste no Jogo da Picaria que é um jogo abstrato de dois jogadores oriundo dos Nativos Americanos.</p>
 
   
   
-<h2>🧐 ScreenShots </h2>
+<h2>🧐 Funcionalidades</h2>
 
-Main Menu
-![asd11](https://github.com/user-attachments/assets/13ede5fe-ac90-4b4f-87cc-fb0a94ddd94b)
 
-How to Play
-![asd22](https://github.com/user-attachments/assets/36f0cbaf-af9e-4536-a456-2d261acfb699)
+*   Multiplayer
 
-GamePlay
-![asd33](https://github.com/user-attachments/assets/82c23bb9-842f-41fc-b68e-ef27127e4ced)
 
+
+<h2>🛠️ Passos de Instalação:</h2>
+
+<p>1. Por o Servidor a funcionar:</p>
+
+```
+https://github.com/shoteose/Picaria_LDP_Servidor
+```
+  
 <h2>💻 Built with</h2>
 
 Tecnologias usadas no projeto:
 
-*   Javascript com a biblioteca P5.js
+*   Java
+*   JavaFX
